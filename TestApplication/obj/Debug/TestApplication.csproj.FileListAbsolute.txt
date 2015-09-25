@@ -1,0 +1,14 @@
+c:\users\jovan\documents\visual studio 2012\Projects\BigRoom\TestApplication\bin\Debug\TestApplication.exe.config
+c:\users\jovan\documents\visual studio 2012\Projects\BigRoom\TestApplication\bin\Debug\TestApplication.exe
+c:\users\jovan\documents\visual studio 2012\Projects\BigRoom\TestApplication\bin\Debug\TestApplication.pdb
+c:\users\jovan\documents\visual studio 2012\Projects\BigRoom\TestApplication\bin\Debug\BigRoom.DataAccessLayer.dll
+c:\users\jovan\documents\visual studio 2012\Projects\BigRoom\TestApplication\bin\Debug\BigRoom.Model.dll
+c:\users\jovan\documents\visual studio 2012\Projects\BigRoom\TestApplication\bin\Debug\EntityFramework.dll
+c:\users\jovan\documents\visual studio 2012\Projects\BigRoom\TestApplication\bin\Debug\EntityFramework.SqlServer.dll
+c:\users\jovan\documents\visual studio 2012\Projects\BigRoom\TestApplication\bin\Debug\BigRoom.DataAccessLayer.pdb
+c:\users\jovan\documents\visual studio 2012\Projects\BigRoom\TestApplication\bin\Debug\BigRoom.Model.pdb
+c:\users\jovan\documents\visual studio 2012\Projects\BigRoom\TestApplication\bin\Debug\EntityFramework.xml
+c:\users\jovan\documents\visual studio 2012\Projects\BigRoom\TestApplication\bin\Debug\EntityFramework.SqlServer.xml
+c:\users\jovan\documents\visual studio 2012\Projects\BigRoom\TestApplication\obj\Debug\TestApplication.csprojResolveAssemblyReference.cache
+c:\users\jovan\documents\visual studio 2012\Projects\BigRoom\TestApplication\obj\Debug\TestApplication.exe
+c:\users\jovan\documents\visual studio 2012\Projects\BigRoom\TestApplication\obj\Debug\TestApplication.pdb

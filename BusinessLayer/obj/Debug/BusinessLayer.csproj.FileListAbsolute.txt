@@ -1,0 +1,14 @@
+c:\users\jovan\documents\visual studio 2012\Projects\BigRoom\BusinessLayer\bin\Debug\BusinessLayer.dll.config
+c:\users\jovan\documents\visual studio 2012\Projects\BigRoom\BusinessLayer\bin\Debug\BusinessLayer.dll
+c:\users\jovan\documents\visual studio 2012\Projects\BigRoom\BusinessLayer\bin\Debug\BusinessLayer.pdb
+c:\users\jovan\documents\visual studio 2012\Projects\BigRoom\BusinessLayer\bin\Debug\BigRoom.DataAccessLayer.dll
+c:\users\jovan\documents\visual studio 2012\Projects\BigRoom\BusinessLayer\bin\Debug\BigRoom.Model.dll
+c:\users\jovan\documents\visual studio 2012\Projects\BigRoom\BusinessLayer\bin\Debug\EntityFramework.dll
+c:\users\jovan\documents\visual studio 2012\Projects\BigRoom\BusinessLayer\bin\Debug\EntityFramework.SqlServer.dll
+c:\users\jovan\documents\visual studio 2012\Projects\BigRoom\BusinessLayer\bin\Debug\BigRoom.DataAccessLayer.pdb
+c:\users\jovan\documents\visual studio 2012\Projects\BigRoom\BusinessLayer\bin\Debug\BigRoom.Model.pdb
+c:\users\jovan\documents\visual studio 2012\Projects\BigRoom\BusinessLayer\bin\Debug\EntityFramework.xml
+c:\users\jovan\documents\visual studio 2012\Projects\BigRoom\BusinessLayer\bin\Debug\EntityFramework.SqlServer.xml
+c:\users\jovan\documents\visual studio 2012\Projects\BigRoom\BusinessLayer\obj\Debug\BusinessLayer.csprojResolveAssemblyReference.cache
+c:\users\jovan\documents\visual studio 2012\Projects\BigRoom\BusinessLayer\obj\Debug\BusinessLayer.dll
+c:\users\jovan\documents\visual studio 2012\Projects\BigRoom\BusinessLayer\obj\Debug\BusinessLayer.pdb

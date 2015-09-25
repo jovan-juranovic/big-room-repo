@@ -1,0 +1,12 @@
+C:\Users\Jovan\Documents\Visual Studio 2012\Projects\BigRoom\BigRoom.DataAccessLayer\bin\Debug\BigRoom.DataAccessLayer.dll.config
+C:\Users\Jovan\Documents\Visual Studio 2012\Projects\BigRoom\BigRoom.DataAccessLayer\bin\Debug\BigRoom.DataAccessLayer.dll
+C:\Users\Jovan\Documents\Visual Studio 2012\Projects\BigRoom\BigRoom.DataAccessLayer\bin\Debug\BigRoom.DataAccessLayer.pdb
+C:\Users\Jovan\Documents\Visual Studio 2012\Projects\BigRoom\BigRoom.DataAccessLayer\bin\Debug\BigRoom.Model.dll
+C:\Users\Jovan\Documents\Visual Studio 2012\Projects\BigRoom\BigRoom.DataAccessLayer\bin\Debug\EntityFramework.dll
+C:\Users\Jovan\Documents\Visual Studio 2012\Projects\BigRoom\BigRoom.DataAccessLayer\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Jovan\Documents\Visual Studio 2012\Projects\BigRoom\BigRoom.DataAccessLayer\bin\Debug\BigRoom.Model.pdb
+C:\Users\Jovan\Documents\Visual Studio 2012\Projects\BigRoom\BigRoom.DataAccessLayer\bin\Debug\EntityFramework.xml
+C:\Users\Jovan\Documents\Visual Studio 2012\Projects\BigRoom\BigRoom.DataAccessLayer\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Jovan\Documents\Visual Studio 2012\Projects\BigRoom\BigRoom.DataAccessLayer\obj\Debug\BigRoom.DataAccessLayer.csprojResolveAssemblyReference.cache
+C:\Users\Jovan\Documents\Visual Studio 2012\Projects\BigRoom\BigRoom.DataAccessLayer\obj\Debug\BigRoom.DataAccessLayer.dll
+C:\Users\Jovan\Documents\Visual Studio 2012\Projects\BigRoom\BigRoom.DataAccessLayer\obj\Debug\BigRoom.DataAccessLayer.pdb
