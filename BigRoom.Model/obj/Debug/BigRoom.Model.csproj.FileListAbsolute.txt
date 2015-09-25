@@ -2,3 +2,8 @@ C:\Users\Jovan\Documents\Visual Studio 2012\Projects\BigRoom\BigRoom.Model\bin\D
 C:\Users\Jovan\Documents\Visual Studio 2012\Projects\BigRoom\BigRoom.Model\bin\Debug\BigRoom.Model.pdb
 C:\Users\Jovan\Documents\Visual Studio 2012\Projects\BigRoom\BigRoom.Model\obj\Debug\BigRoom.Model.dll
 C:\Users\Jovan\Documents\Visual Studio 2012\Projects\BigRoom\BigRoom.Model\obj\Debug\BigRoom.Model.pdb
+C:\git\big-room-repo\BigRoom.Model\bin\Debug\BigRoom.Model.dll
+C:\git\big-room-repo\BigRoom.Model\bin\Debug\BigRoom.Model.pdb
+C:\git\big-room-repo\BigRoom.Model\obj\Debug\BigRoom.Model.csprojResolveAssemblyReference.cache
+C:\git\big-room-repo\BigRoom.Model\obj\Debug\BigRoom.Model.dll
+C:\git\big-room-repo\BigRoom.Model\obj\Debug\BigRoom.Model.pdb

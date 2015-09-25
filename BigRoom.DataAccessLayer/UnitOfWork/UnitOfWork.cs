@@ -1,20 +1,21 @@
 ﻿using System;
 using BigRoom.DataAccessLayer.Repositories;
+using BigRoom.Model;
 
 namespace BigRoom.DataAccessLayer.UnitOfWork
 {
     public class UnitOfWork : IDisposable
     {
         private BigRoomContext ctx = new BigRoomContext();
-        private CategoryRepository categoryRepository;
+        private IRepository<Category> categoryRepository;
 
-        public CategoryRepository CategoryRepository
+        public IRepository<Category> CategoryRepository
         {
             get
             {
                 if (this.categoryRepository == null)
                 {
-                    this.categoryRepository = new CategoryRepository(ctx);
+                    this.categoryRepository = new Repository<Category>(ctx);
                 }
 
                 return categoryRepository;
@@ -42,7 +43,7 @@ namespace BigRoom.DataAccessLayer.UnitOfWork
             {
                 if (disposing)
                 {
-                    ctx.Dispose();
+                    categoryRepository.Dispose();
                 }
             }
             this.disposed = true;

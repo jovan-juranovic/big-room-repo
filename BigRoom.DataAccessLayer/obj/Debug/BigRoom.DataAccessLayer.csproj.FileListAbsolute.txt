@@ -10,3 +10,15 @@ C:\Users\Jovan\Documents\Visual Studio 2012\Projects\BigRoom\BigRoom.DataAccessL
 C:\Users\Jovan\Documents\Visual Studio 2012\Projects\BigRoom\BigRoom.DataAccessLayer\obj\Debug\BigRoom.DataAccessLayer.csprojResolveAssemblyReference.cache
 C:\Users\Jovan\Documents\Visual Studio 2012\Projects\BigRoom\BigRoom.DataAccessLayer\obj\Debug\BigRoom.DataAccessLayer.dll
 C:\Users\Jovan\Documents\Visual Studio 2012\Projects\BigRoom\BigRoom.DataAccessLayer\obj\Debug\BigRoom.DataAccessLayer.pdb
+C:\git\big-room-repo\BigRoom.DataAccessLayer\bin\Debug\BigRoom.DataAccessLayer.dll.config
+C:\git\big-room-repo\BigRoom.DataAccessLayer\bin\Debug\BigRoom.DataAccessLayer.dll
+C:\git\big-room-repo\BigRoom.DataAccessLayer\bin\Debug\BigRoom.DataAccessLayer.pdb
+C:\git\big-room-repo\BigRoom.DataAccessLayer\bin\Debug\BigRoom.Model.dll
+C:\git\big-room-repo\BigRoom.DataAccessLayer\bin\Debug\EntityFramework.dll
+C:\git\big-room-repo\BigRoom.DataAccessLayer\bin\Debug\EntityFramework.SqlServer.dll
+C:\git\big-room-repo\BigRoom.DataAccessLayer\bin\Debug\BigRoom.Model.pdb
+C:\git\big-room-repo\BigRoom.DataAccessLayer\bin\Debug\EntityFramework.xml
+C:\git\big-room-repo\BigRoom.DataAccessLayer\bin\Debug\EntityFramework.SqlServer.xml
+C:\git\big-room-repo\BigRoom.DataAccessLayer\obj\Debug\BigRoom.DataAccessLayer.csprojResolveAssemblyReference.cache
+C:\git\big-room-repo\BigRoom.DataAccessLayer\obj\Debug\BigRoom.DataAccessLayer.dll
+C:\git\big-room-repo\BigRoom.DataAccessLayer\obj\Debug\BigRoom.DataAccessLayer.pdb

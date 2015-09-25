@@ -24,3 +24,29 @@ C:\Users\Jovan\Documents\Visual Studio 2012\Projects\BigRoom\BigRoom.Website\bin
 C:\Users\Jovan\Documents\Visual Studio 2012\Projects\BigRoom\BigRoom.Website\obj\Debug\BigRoom.Website.csprojResolveAssemblyReference.cache
 C:\Users\Jovan\Documents\Visual Studio 2012\Projects\BigRoom\BigRoom.Website\obj\Debug\BigRoom.Website.dll
 C:\Users\Jovan\Documents\Visual Studio 2012\Projects\BigRoom\BigRoom.Website\obj\Debug\BigRoom.Website.pdb
+C:\git\big-room-repo\BigRoom.Website\bin\BigRoom.Website.dll
+C:\git\big-room-repo\BigRoom.Website\bin\BigRoom.Website.pdb
+C:\git\big-room-repo\BigRoom.Website\bin\Antlr3.Runtime.dll
+C:\git\big-room-repo\BigRoom.Website\bin\Microsoft.Web.Infrastructure.dll
+C:\git\big-room-repo\BigRoom.Website\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+C:\git\big-room-repo\BigRoom.Website\bin\Newtonsoft.Json.dll
+C:\git\big-room-repo\BigRoom.Website\bin\System.Web.Helpers.dll
+C:\git\big-room-repo\BigRoom.Website\bin\System.Web.Mvc.dll
+C:\git\big-room-repo\BigRoom.Website\bin\System.Web.Optimization.dll
+C:\git\big-room-repo\BigRoom.Website\bin\System.Web.Razor.dll
+C:\git\big-room-repo\BigRoom.Website\bin\System.Web.WebPages.Deployment.dll
+C:\git\big-room-repo\BigRoom.Website\bin\System.Web.WebPages.dll
+C:\git\big-room-repo\BigRoom.Website\bin\System.Web.WebPages.Razor.dll
+C:\git\big-room-repo\BigRoom.Website\bin\WebGrease.dll
+C:\git\big-room-repo\BigRoom.Website\bin\Antlr3.Runtime.pdb
+C:\git\big-room-repo\BigRoom.Website\bin\Newtonsoft.Json.xml
+C:\git\big-room-repo\BigRoom.Website\bin\System.Web.Optimization.xml
+C:\git\big-room-repo\BigRoom.Website\bin\System.Web.Helpers.xml
+C:\git\big-room-repo\BigRoom.Website\bin\System.Web.Mvc.xml
+C:\git\big-room-repo\BigRoom.Website\bin\System.Web.Razor.xml
+C:\git\big-room-repo\BigRoom.Website\bin\System.Web.WebPages.xml
+C:\git\big-room-repo\BigRoom.Website\bin\System.Web.WebPages.Deployment.xml
+C:\git\big-room-repo\BigRoom.Website\bin\System.Web.WebPages.Razor.xml
+C:\git\big-room-repo\BigRoom.Website\obj\Debug\BigRoom.Website.csprojResolveAssemblyReference.cache
+C:\git\big-room-repo\BigRoom.Website\obj\Debug\BigRoom.Website.dll
+C:\git\big-room-repo\BigRoom.Website\obj\Debug\BigRoom.Website.pdb
