@@ -21,10 +21,13 @@ namespace BigRoom.Model
         [Required, MaxLength(50)]
         public string Title { get; set; }
 
-        [Required, MaxLength(100)]
+        [Required]
         public string Comment { get; set; }
 
-        public int? Grade { get; set; }
+        public int? Rating { get; set; }
+
+        [Required]
+        public bool Approved { get; set; }
 
         // Foreign Keys
         public int ProductId { get; set; }

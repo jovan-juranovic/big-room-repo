@@ -179,10 +179,14 @@
     <Compile Include="Common\BaseApiController.cs" />
     <Compile Include="Controllers\CategoriesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\CategoryVM.cs" />
+    <Compile Include="Models\CategoryVms\CategoryVM.cs" />
+    <Compile Include="Models\ProductVms\ProductDetailVM.cs" />
+    <Compile Include="Models\ProductVms\ProductReviewVM.cs" />
+    <Compile Include="Models\ProductVms\ProductVM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

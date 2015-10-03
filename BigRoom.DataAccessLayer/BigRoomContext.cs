@@ -8,6 +8,8 @@ namespace BigRoom.DataAccessLayer
         public BigRoomContext() : base("BigRoomDb")
         {
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<BigRoomContext, Migrations.Configuration>());
+            this.Configuration.ProxyCreationEnabled = true;
+            this.Configuration.LazyLoadingEnabled = true;
         }
 
         public DbSet<User> Users { get; set; }

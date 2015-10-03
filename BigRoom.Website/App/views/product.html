@@ -1,0 +1,65 @@
+﻿<div class="col-md-9">
+
+    <div class="thumbnail">
+        <img class="img-responsive" src="http://placehold.it/800x300" alt="">
+        <div class="caption-full">
+            <h4 class="pull-right">{{prodCtrl.product.Price | currency}}</h4>
+            <h4>
+                <a href="#/product/{{prodCtrl.product.Id}}">{{prodCtrl.product.Name}}</a>
+            </h4>
+            <blockquote>{{prodCtrl.product.Description}}</blockquote>
+            <button class="btn btn-danger pull-right">Add to cart</button>
+        </div>
+        <div class="ratings">
+            <p>
+                <span class="glyphicon glyphicon-star" ng-repeat="x in [] | range:prodCtrl.product.AverigeRating"></span>
+                <span class="glyphicon glyphicon-star-empty" ng-repeat="y in [] | range:prodCtrl.product.AverigeRating:5"></span>
+                {{prodCtrl.product.AverigeRating}} stars
+            </p>
+        </div>
+    </div>
+
+    <section ng-controller="WellController as wellCtrl">
+        <ul class="nav nav-pills">
+            <li ng-class="{ active: wellCtrl.isSelected(1) }">
+                <a href ng-click="wellCtrl.selectTab(1)">Specifications</a>
+            </li>
+            <li ng-class="{ active: wellCtrl.isSelected(2) }">
+                <a href ng-click="wellCtrl.selectTab(2)">Reviews</a>
+            </li>
+        </ul>
+
+        <div class="well" ng-show="wellCtrl.isSelected(1)">
+            <h4>Specifications</h4>
+            <blockquote>
+                <p ng-repeat="detail in prodCtrl.product.ProductDetails">
+                    <strong>{{detail.Name}}</strong>: {{detail.Content}} 
+                </p>
+            </blockquote>
+        </div>
+
+        <div class="well" ng-show="wellCtrl.isSelected(2)">
+
+            <h4>Reviews</h4>
+            <div class="text-right">
+                <a class="btn btn-success">Leave a Review</a>
+            </div>
+
+            <hr>
+
+            <div class="row" ng-repeat="review in prodCtrl.product.ProductReviews">
+                <div class="col-md-12">
+                    <span class="glyphicon glyphicon-star" ng-repeat="x in [] | range:review.Rating"></span>
+                    <span class="glyphicon glyphicon-star-empty" ng-repeat="y in [] | range:review.Rating:5"></span>
+                    {{review.UserEmail}}
+                    <span class="pull-right">{{review.PostingDate | date}}</span>
+                    <p>{{review.Comment}}</p>
+                </div>
+            </div>
+
+            <hr>
+
+        </div>
+
+    </section>
+</div>

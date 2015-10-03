@@ -26,3 +26,5 @@ C:\git\big-room-repo\TestApplication\bin\Debug\EntityFramework.SqlServer.xml
 C:\git\big-room-repo\TestApplication\obj\Debug\ATestApplication.csprojResolveAssemblyReference.cache
 C:\git\big-room-repo\TestApplication\obj\Debug\TestApplication.exe
 C:\git\big-room-repo\TestApplication\obj\Debug\TestApplication.pdb
+C:\git\big-room-repo\TestApplication\bin\Debug\BigRoom.BusinessLayer.dll
+C:\git\big-room-repo\TestApplication\bin\Debug\BigRoom.BusinessLayer.pdb

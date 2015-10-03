@@ -8,6 +8,8 @@ namespace BigRoom.DataAccessLayer.UnitOfWork
     {
         private BigRoomContext ctx = new BigRoomContext();
         private IRepository<Category> categoryRepository;
+        private IRepository<Product> productRepository;
+        private IRepository<ProductReview> reviewRepository; 
 
         public IRepository<Category> CategoryRepository
         {
@@ -19,6 +21,32 @@ namespace BigRoom.DataAccessLayer.UnitOfWork
                 }
 
                 return categoryRepository;
+            }
+        }
+
+        public IRepository<Product> ProductRepository
+        {
+            get
+            {
+                if (this.productRepository == null)
+                {
+                    this.productRepository = new Repository<Product>(ctx);
+                }
+
+                return productRepository;
+            }
+        }
+
+        public IRepository<ProductReview> ReviewRepository
+        {
+            get
+            {
+                if (this.reviewRepository == null)
+                {
+                    this.reviewRepository = new Repository<ProductReview>(ctx);
+                }
+
+                return reviewRepository;
             }
         }
 
@@ -43,7 +71,7 @@ namespace BigRoom.DataAccessLayer.UnitOfWork
             {
                 if (disposing)
                 {
-                    categoryRepository.Dispose();
+                    ctx.Dispose();
                 }
             }
             this.disposed = true;

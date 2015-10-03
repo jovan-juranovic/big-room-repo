@@ -1,28 +1,134 @@
 ﻿<!DOCTYPE html>
-<html data-ng-app="BigRoomApp">
-<head>
-    <meta content="IE=edge, chrome=1" http-equiv="X-UA-Compatible" />
-    <title>Big Room - Online Shop</title>
-    <link href="~/Libraries/Bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
-    <link href="~/Libraries/Angularjs/css/loading-bar.min.css" rel="stylesheet"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-</head>
-<body>
-<div class="container">
-    <div data-ng-view="">
-    </div>
-</div>
-    <!-- 3rd party libs -->
-    <script src="~/Libraries/jQuery/jquery-2.1.4.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.6/angular.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.6/angular-route.min.js"></script>
-    <script src="~/Libraries/Angularjs/js/loading-bar.min.js"></script>
-    <script src="~/Libraries/Bootstrap/js/bootstrap.min.js"></script>
-    <!-- Load app main script -->
-    <script src="~/App/app.js"></script>
-    <!-- Load services -->
-    <script src="~/App/services/categoriesService.js"></script>
-    <!-- Load controllers -->
-    <script src="~/App/controllers/homeController.js"></script>
-</body>
+<html ng-app="BigRoomApp">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>Big Room - Online Shop</title>
+
+        <link href="~/Libraries/Bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+        <link href="~/Libraries/Bootstrap/css/shop-homepage.css" rel="stylesheet"/>
+        <link href="~/Libraries/Bootstrap/css/shop-item.css" rel="stylesheet"/>
+        <link href="~/Libraries/Angularjs/css/loading-bar.min.css" rel="stylesheet"/>
+        <link href="~/Libraries/Angularjs/css/select.min.css" rel="stylesheet"/>
+
+    </head>
+    <body>
+
+        <!-- Navigation -->
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Start Bootstrap</a>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a href="#">About</a>
+                        </li>
+                        <li>
+                            <a href="#">Services</a>
+                        </li>
+                        <li>
+                            <a href="#">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container -->
+        </nav>
+
+        <!-- Page Content -->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3" ng-controller="CategoriesController as categoriesCtrl">
+                    <p class="lead">Shop name</p>
+                    <form novalidate>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <ui-select ng-model="categoriesCtrl.category.selected" theme="bootstrap" style="width: 95%;">
+                                    <ui-select-match placeholder="Search a category...">{{$select.selected.Name}}</ui-select-match>
+                                    <ui-select-choices repeat="item in categoriesCtrl.categories | filter: $select.search">
+                                        <div data-ng-bind-html="item.Name | highlight: $select.search"></div>
+                                    </ui-select-choices>
+                                </ui-select>
+                                <span class="input-group-btn">
+                                    <button type="button" class="close" aria-label="Close" data-ng-click="categoriesCtrl.category.selected = undefined">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </span>
+                            </div>
+                        </div>
+                        <div ng-controller="ProductsController as productsCtrl">
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <ui-select ng-click="productsCtrl.searchProducts(categoriesCtrl.category.selected.Id)" ng-model="productsCtrl.product.selected" theme="bootstrap" style="width: 95%;">
+                                        <ui-select-match placeholder="Search a product...">{{$select.selected.Name}}</ui-select-match>
+                                        <ui-select-choices repeat="item in productsCtrl.products | filter: $select.search">
+                                            <div data-ng-bind-html="item.Name | highlight: $select.search"></div>
+                                        </ui-select-choices>
+                                    </ui-select>
+                                    <span class="input-group-btn">
+                                        <button type="button" class="close" aria-label="Close" data-ng-click="productsCtrl.product.selected = undefined">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </span>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-lg" ng-click="productsCtrl.goToProduct(productsCtrl.product.selected.Id)">Go!</button>
+                        </div>
+                    </form>
+                </div>
+                <div ng-view>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <hr>
+            <!-- Footer -->
+            <footer>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <p>Copyright &copy; Jovan Juranovic 2015</p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+
+        <!-- 3rd party libs -->
+        <script src="~/Libraries/jQuery/jquery-2.1.4.min.js"></script>
+        <script src="~/Libraries/Angularjs/js/angular.min.js"></script>
+        <script src="~/Libraries/Angularjs/js/select.min.js"></script>
+        <script src="~/Libraries/Angularjs/js/angular-route.min.js"></script>
+        <script src="~/Libraries/Angularjs/js/angular-sanitize.min.js"></script>
+        <script src="~/Libraries/Angularjs/js/loading-bar.min.js"></script>
+        <script src="~/Libraries/Bootstrap/js/bootstrap.min.js"></script>
+        <!-- Load app main scripts -->
+        <script src="~/App/app.js"></script>
+        <script src="~/App/config.js"></script>
+        <!-- Load filters -->
+        <script src="~/App/Filters/range.js"></script>
+        <!-- Load services -->
+        <script src="~/App/Categories/categoriesService.js"></script>
+        <script src="~/App/Products/productsService.js"></script>
+        <!-- Load controllers -->
+        <script src="~/App/Home/indexController.js"></script>
+        <script src="~/App/Categories/categoriesController.js"></script>
+        <script src="~/App/Products/productsController.js"></script>
+        <script src="~/App/Products/productController.js"></script>
+        <script src="~/App/Products/wellController.js"></script>
+    </body>
 </html>

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
-using BigRoom.DataAccessLayer;
+using BigRoom.BusinessLayer;
+using BigRoom.Model;
 
 namespace TestApplication
 {
@@ -8,11 +9,11 @@ namespace TestApplication
     {
         static void Main(string[] args)
         {
-            using (var ctx = new BigRoomContext())
-            {
-                var name = ctx.Countries.Single(c => c.Id == 206).Name;
-                Console.WriteLine(name);
-            }
+            ProductReviewService ps = new ProductReviewService();
+
+            ProductReview p = ps.GetReviewsByProduct(31).First();
+
+            Console.WriteLine(p.Title);
 
             Console.ReadLine();
         }

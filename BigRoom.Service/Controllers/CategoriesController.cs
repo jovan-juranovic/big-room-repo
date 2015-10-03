@@ -3,18 +3,19 @@ using System.Linq;
 using System.Web.Http;
 using BigRoom.BusinessLayer;
 using BigRoom.Service.Common;
-using BigRoom.Service.Models;
+using BigRoom.Service.Models.CategoryVms;
 
 namespace BigRoom.Service.Controllers
 {
     public class CategoriesController : BaseApiController
     {
-        CategoryService categoryService = new CategoryService();
+        private CategoryService categoryService = new CategoryService();
 
         public IEnumerable<CategoryVM> Get()
         {
             return categoryService.GetCategories().Select(c => new CategoryVM
             {
+                Id = c.Id,
                 Name = c.Name
             }).ToList();
         }
@@ -34,12 +35,6 @@ namespace BigRoom.Service.Controllers
 
         public void Delete(int id)
         {
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            categoryService.Dispose();
-            base.Dispose(disposing);
         }
     }
 }

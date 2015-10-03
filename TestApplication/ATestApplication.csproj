@@ -66,6 +66,10 @@
       <Project>{3e918754-d99d-497f-ad77-e19c1d5a574f}</Project>
       <Name>BigRoom.Model</Name>
     </ProjectReference>
+    <ProjectReference Include="..\BusinessLayer\BigRoom.BusinessLayer.csproj">
+      <Project>{a39480d6-c746-4582-bf9a-d2831cd546e8}</Project>
+      <Name>BigRoom.BusinessLayer</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
