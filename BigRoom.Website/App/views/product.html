@@ -1,4 +1,33 @@
-﻿<div class="col-md-9">
+﻿<style type="text/css">
+    .animate-show {
+        line-height: 20px;
+        opacity: 1;
+        padding: 10px;
+    }
+
+    .animate-show.ng-hide-add, .animate-show.ng-hide-remove {
+         transition: all linear 0.25s;
+    }
+
+    .animate-show.ng-hide {
+        line-height: 0;
+        opacity: 0;
+        padding: 0 10px;
+    }
+
+    .ng-invalid.ng-dirty {
+        border-color: #FA787E
+    }
+
+    .ng-valid.ng-dirty {
+        border-color: #78FA89
+    }
+</style>
+
+
+<div class="col-md-9">
+
+    <toaster-container></toaster-container>
 
     <div class="thumbnail">
         <img class="img-responsive" src="http://placehold.it/800x300" alt="">
@@ -42,7 +71,62 @@
 
             <h4>Reviews</h4>
             <div class="text-right">
-                <a class="btn btn-success">Leave a Review</a>
+                <a class="btn btn-success" ng-click="wellCtrl.setForm()" aria-label="Toogle ngHide">Leave a Review</a>
+            </div>
+
+            <div class="animate-show" ng-show="wellCtrl.showForm">
+                <form name="reviewForm" ng-controller="ReviewController as reviewCtrl"
+                     ng-submit="reviewForm.$valid && reviewCtrl.addReview(reviewCtrl.review)" novalidate>
+                    <div class="form-group">
+                        <label for="reviewEmail">Email address</label>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input type="email" name="email" ng-model="reviewCtrl.review.Email" class="form-control" id="reviewEmail" placeholder="Email" required/>
+                                <div ng-show="reviewForm.$submitted || reviewForm.email.$touched">
+                                    <span class="text-danger" ng-show="reviewForm.email.$error.required">Email is required field</span>
+                                    <span class="text-danger" ng-show="reviewForm.email.$error.email">This is not a valid email.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="reviewTitle">Title</label>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input type="text" name="title" ng-model="reviewCtrl.review.Title" class="form-control" id="reviewTitle" placeholder="Title" required/>
+                                <div ng-show="reviewForm.$submitted || reviewForm.title.$touched">
+                                    <span class="text-danger" ng-show="reviewForm.title.$error.required">Title is required field.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="reviewComment">Comment</label>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <textarea ng-model="reviewCtrl.review.Comment" name="comment" class="form-control" rows="5" id="reviewComment" placeholder="Comment" required></textarea>
+                                <div ng-show="reviewForm.$submitted || reviewForm.comment.$touched">
+                                    <span class="text-danger" ng-show="reviewForm.comment.$error.required">Comment is required field.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="reviewRating">Rating</label>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <select name="rating" class="form-control" ng-model="reviewCtrl.review.Rating"
+                                    ng-options="c.code as c.name for c in reviewCtrl.ratings" required>
+                                    <option value="">Rate the Product</option>
+                                </select>
+                                <div ng-show="reviewForm.$submitted || reviewForm.rating.$touched">
+                                    <span class="text-danger" ng-show="reviewForm.rating.$error.required">You must select some rating.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-warning">Submit Review</button>
+                </form>
             </div>
 
             <hr>
@@ -51,9 +135,9 @@
                 <div class="col-md-12">
                     <span class="glyphicon glyphicon-star" ng-repeat="x in [] | range:review.Rating"></span>
                     <span class="glyphicon glyphicon-star-empty" ng-repeat="y in [] | range:review.Rating:5"></span>
-                    {{review.UserEmail}}
+                    <cite>-{{review.UserEmail}}</cite>
                     <span class="pull-right">{{review.PostingDate | date}}</span>
-                    <p>{{review.Comment}}</p>
+                    <blockquote>{{review.Comment}}</blockquote>
                 </div>
             </div>
 

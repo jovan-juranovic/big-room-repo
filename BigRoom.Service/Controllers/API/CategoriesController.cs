@@ -1,15 +1,36 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
-using BigRoom.BusinessLayer;
+using BigRoom.BusinessLayer.Interfaces;
+using BigRoom.BusinessLayer.Services;
 using BigRoom.Service.Common;
 using BigRoom.Service.Models.CategoryVms;
 
-namespace BigRoom.Service.Controllers
+namespace BigRoom.Service.Controllers.API
 {
     public class CategoriesController : BaseApiController
     {
-        private CategoryService categoryService = new CategoryService();
+        #region Fields
+
+        private readonly ICategoryService categoryService;
+
+        #endregion
+
+        #region Ctor's
+
+        public CategoriesController()
+        {
+            this.categoryService = new CategoryService();
+        }
+
+        public CategoriesController(ICategoryService categoryService)
+        {
+            this.categoryService = categoryService;
+        }
+
+        #endregion
+
+        #region API
 
         public IEnumerable<CategoryVM> Get()
         {
@@ -36,5 +57,7 @@ namespace BigRoom.Service.Controllers
         public void Delete(int id)
         {
         }
+
+        #endregion
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using BigRoom.BusinessLayer;
+using BigRoom.BusinessLayer.Services;
 using BigRoom.Model;
 
 namespace TestApplication
@@ -11,9 +12,20 @@ namespace TestApplication
         {
             ProductReviewService ps = new ProductReviewService();
 
-            ProductReview p = ps.GetReviewsByProduct(31).First();
+            ProductReview p = new ProductReview
+            {
+                Title = "Test",
+                Comment = "Test",
+                Approved = false,
+                PostingDate = DateTime.Now,
+                ProductId = 31,
+                UserId = 5,
+                Rating = 5
+            };
 
-            Console.WriteLine(p.Title);
+            bool result = ps.InsertReview(p);
+
+            Console.WriteLine(result);
 
             Console.ReadLine();
         }

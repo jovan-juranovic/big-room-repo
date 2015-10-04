@@ -142,11 +142,14 @@
     <Content Include="App\Products\productsController.js" />
     <Content Include="App\Products\productsService.js" />
     <Content Include="App\Products\wellController.js" />
+    <Content Include="App\Reviews\reviewController.js" />
+    <Content Include="App\Reviews\reviewService.js" />
     <Content Include="App\Views\home.html" />
     <Content Include="App\Views\product.html" />
     <Content Include="Global.asax" />
     <Content Include="Libraries\Angularjs\css\loading-bar.min.css" />
     <Content Include="Libraries\Angularjs\css\select.min.css" />
+    <Content Include="Libraries\Angularjs\js\angular-animate.min.js" />
     <Content Include="Libraries\Angularjs\js\angular-route.min.js" />
     <Content Include="Libraries\Angularjs\js\angular-sanitize.min.js" />
     <Content Include="Libraries\Angularjs\js\angular.min.js" />

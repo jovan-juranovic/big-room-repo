@@ -1,11 +1,12 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using BigRoom.BusinessLayer.Interfaces;
 using BigRoom.DataAccessLayer.UnitOfWork;
 using BigRoom.Model;
 
-namespace BigRoom.BusinessLayer
+namespace BigRoom.BusinessLayer.Services
 {
-    public class ProductService
+    public class ProductService : IProductService
     {
         public IEnumerable<Product> GetProducts(int? categoryId)
         {

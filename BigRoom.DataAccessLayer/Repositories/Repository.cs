@@ -49,7 +49,7 @@ namespace BigRoom.DataAccessLayer.Repositories
 
         public virtual void Insert(TEntity entity)
         {
-            throw new NotImplementedException();
+            dbSet.Add(entity);
         }
 
         public virtual void Delete(TEntity entity)

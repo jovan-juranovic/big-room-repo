@@ -177,9 +177,11 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Common\BaseApiController.cs" />
-    <Compile Include="Controllers\CategoriesController.cs" />
+    <Compile Include="Common\Filters\CustomExceptionFilterAttribute.cs" />
+    <Compile Include="Controllers\API\CategoriesController.cs" />
+    <Compile Include="Controllers\API\ProductsController.cs" />
+    <Compile Include="Controllers\API\ReviewsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -187,6 +189,7 @@
     <Compile Include="Models\ProductVms\ProductDetailVM.cs" />
     <Compile Include="Models\ProductVms\ProductReviewVM.cs" />
     <Compile Include="Models\ProductVms\ProductVM.cs" />
+    <Compile Include="Models\ReviewVms\ReviewRequest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

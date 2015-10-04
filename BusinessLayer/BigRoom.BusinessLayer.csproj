@@ -48,10 +48,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CategoryService.cs" />
-    <Compile Include="ProductReviewService.cs" />
-    <Compile Include="ProductService.cs" />
+    <Compile Include="Interfaces\ICategoryService.cs" />
+    <Compile Include="Interfaces\IProductReviewService.cs" />
+    <Compile Include="Interfaces\IProductService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\CategoryService.cs" />
+    <Compile Include="Services\ProductReviewService.cs" />
+    <Compile Include="Services\ProductService.cs" />
+    <Compile Include="Util\Extensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BigRoom.DataAccessLayer\BigRoom.DataAccessLayer.csproj">
@@ -67,6 +71,7 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

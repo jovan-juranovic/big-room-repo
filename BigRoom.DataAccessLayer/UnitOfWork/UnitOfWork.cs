@@ -50,9 +50,9 @@ namespace BigRoom.DataAccessLayer.UnitOfWork
             }
         }
 
-        public void Save()
+        public int Save()
         {
-            ctx.SaveChanges();
+            return ctx.SaveChanges();
         }
 
         #region IDisposable
