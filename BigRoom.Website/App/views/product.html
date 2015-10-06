@@ -37,7 +37,7 @@
                 <a href="#/product/{{prodCtrl.product.Id}}">{{prodCtrl.product.Name}}</a>
             </h4>
             <blockquote>{{prodCtrl.product.Description}}</blockquote>
-            <button class="btn btn-danger pull-right">Add to cart</button>
+            <button class="btn btn-danger pull-right" ng-click="prodCtrl.addToCart(prodCtrl.product)">Add to cart</button>
         </div>
         <div class="ratings">
             <p>

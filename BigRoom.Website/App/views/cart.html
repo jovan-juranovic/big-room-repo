@@ -1,0 +1,18 @@
+﻿<div class="col-md-9">
+
+    <div class="progress" ng-controller="ProgressController as progressCtrl">
+        <div class="progress-bar progress-bar-danger progress-bar-striped" style="width: 35%">
+            <cite>Placing Order</cite>
+        </div>
+        <div ng-show="progressCtrl.isCustomerInfoPage()" class="progress-bar progress-bar-warning progress-bar-striped" style="width: 35%">
+            <cite>Customer Info</cite>
+        </div>
+        <div ng-show="progressCtrl.isPaymentMethodPage()" class="progress-bar progress-bar-success progress-bar-striped" style="width: 30%">
+            <cite>Payment Method</cite>
+        </div>
+    </div>
+
+    <div class="row">
+        <div ui-view></div>
+    </div>
+</div>

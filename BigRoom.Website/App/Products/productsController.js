@@ -3,9 +3,9 @@
         .module("BigRoomApp")
         .controller("ProductsController", ProductsController);
 
-    ProductsController.$inject = ["$location", "productsService"];
+    ProductsController.$inject = ["$state", "productsService"];
 
-    function ProductsController($location, productsService) {
+    function ProductsController($state, productsService) {
         var productsCtrl = this;
 
         productsCtrl.disabled = undefined;
@@ -46,7 +46,7 @@
         };
 
         productsCtrl.goToProduct = function(productId) {
-            $location.path("/product/" + productId);
+            $state.go("product", { id: productId });
         };
     }
 })();

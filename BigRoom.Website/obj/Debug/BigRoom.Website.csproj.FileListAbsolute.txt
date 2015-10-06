@@ -47,6 +47,6 @@ C:\git\big-room-repo\BigRoom.Website\bin\System.Web.Razor.xml
 C:\git\big-room-repo\BigRoom.Website\bin\System.Web.WebPages.xml
 C:\git\big-room-repo\BigRoom.Website\bin\System.Web.WebPages.Deployment.xml
 C:\git\big-room-repo\BigRoom.Website\bin\System.Web.WebPages.Razor.xml
-C:\git\big-room-repo\BigRoom.Website\obj\Debug\BigRoom.Website.csprojResolveAssemblyReference.cache
 C:\git\big-room-repo\BigRoom.Website\obj\Debug\BigRoom.Website.dll
 C:\git\big-room-repo\BigRoom.Website\obj\Debug\BigRoom.Website.pdb
+C:\git\big-room-repo\BigRoom.Website\obj\Debug\BigRoom.Website.csprojResolveAssemblyReference.cache

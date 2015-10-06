@@ -1,0 +1,76 @@
+﻿<form name="customerForm" ng-submit="customerForm.$valid && customerCtrl.addCustomer(customerCtrl.customer)" novalidate>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <div class="row">
+                <div class="col-md-6">
+                    <h3>Shipping Info</h3>
+                </div>
+                <div class="col-md-6">
+                    <div class="alert alert-danger" role="alert" ng-show="customerForm.$invalid">Please enter valid data in the Shipping Form.</div>
+                    <div class="alert alert-success" role="alert" ng-show="customerForm.$valid">Shipping Form appears to be valid. Please proceed to Payment Section.</div>
+                </div>
+            </div>
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group" ng-class="{ 'has-error' : customerForm.fullName.$invalid && !customerForm.fullName.$pristine }">
+                        <label for="fullName">Full name:</label>
+                        <input type="text" ng-model="customerCtrl.customer.FullName" id="fullName" class="form-control" name="fullName" placeholder="Full name" required/>
+                        <p ng-show="customerForm.fullName.$invalid && !customerForm.fullName.$pristine" class="help-block">You name is required.</p>
+                    </div>
+                    <div class="form-group" ng-class="{ 'has-error' : customerForm.address1.$invalid && !customerForm.address1.$pristine }">
+                        <label for="address1">Address line 1:</label>
+                        <input type="text" ng-model="customerCtrl.customer.Address1" id="address1" class="form-control" name="address1" placeholder="Address line 1" required/>
+                        <p ng-show="customerForm.address1.$invalid && !customerForm.address1.$pristine" class="help-block">Your address is required.</p>
+                    </div>
+                    <div class="form-group">
+                        <label for="address2">Address line 2:</label>
+                        <input type="text" ng-model="customerCtrl.customer.Address2" id="address2" class="form-control" name="address2" placeholder="Address line 2"/>
+                    </div>
+                    <div class="form-group" ng-class="{ 'has-error' : customerForm.city.$invalid && !customerForm.city.$pristine }">
+                        <label for="city">City:</label>
+                        <input type="text" ng-model="customerCtrl.customer.City" id="city" class="form-control" name="city" placeholder="City" required/>
+                        <p ng-show="customerForm.city.$invalid && !customerForm.city.$pristine" class="help-block">Your city is required.</p>
+                    </div>
+                    <div class="form-group">
+                        <label for="region">State/Province/Region:</label>
+                        <input type="text" ng-model="customerCtrl.customer.Region" id="region" class="form-control" name="region" placeholder="State/Province/Region"/>
+                    </div>
+                    <div class="form-group" ng-class="{ 'has-error' : customerForm.zip.$invalid && !customerForm.zip.$pristine }">
+                        <label for="zip">ZIP Code:</label>
+                        <input type="text" ng-model="customerCtrl.customer.ZipCode" id="zip" class="form-control" name="zip" placeholder="ZIP" required/>
+                        <p ng-show="customerForm.zip.$invalid && !customerForm.zip.$pristine" class="help-block">Your zip code is required.</p>
+                    </div>
+                    <div class="form-group" ng-class="{ 'has-error' : customerForm.country.$invalid && !customerForm.country.$pristine }">
+                        <label for="country">Country:</label>
+                        <select id="country" class="form-control" ng-model="customerCtrl.customer.Country"
+                                ng-options="c.Code as c.Name for c in customerCtrl.countries" name="country" required>
+                            <option value="">Select Country...</option>
+                        </select>
+                        <p ng-show="customerForm.country.$invalid && !customerForm.country.$pristine" class="help-block">Your country is required.</p>
+                    </div>
+                    <div class="form-group" ng-class="{ 'has-error' : customerForm.phone.$invalid && !customerForm.phone.$pristine }">
+                        <label for="phone">Phone number:</label>
+                        <input type="tel" ng-model="customerCtrl.customer.Phone" id="phone" class="form-control" name="phone" placeholder="Phone number" required/>
+                        <p ng-show="customerForm.phone.$invalid && !customerForm.phone.$pristine" class="help-block">Your phone is required.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="panel-footer">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="pull-right">
+                        <a ui-sref="cart-items" class="btn btn-danger" role="button">
+                            <span class="glyphicon glyphicon-remove"></span> Back to cart
+                        </a>
+                        <a ui-sref="payment-method" role="button" class="btn btn-success" type="submit" ng-disabled="customerForm.$invalid">
+                            <span class="glyphicon glyphicon-ok"></span> Proceed to payment
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

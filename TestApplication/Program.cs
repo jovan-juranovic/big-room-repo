@@ -10,22 +10,9 @@ namespace TestApplication
     {
         static void Main(string[] args)
         {
-            ProductReviewService ps = new ProductReviewService();
+            CountryService cs = new CountryService();
 
-            ProductReview p = new ProductReview
-            {
-                Title = "Test",
-                Comment = "Test",
-                Approved = false,
-                PostingDate = DateTime.Now,
-                ProductId = 31,
-                UserId = 5,
-                Rating = 5
-            };
-
-            bool result = ps.InsertReview(p);
-
-            Console.WriteLine(result);
+            Console.WriteLine(cs.GetCountries().First().Name);
 
             Console.ReadLine();
         }

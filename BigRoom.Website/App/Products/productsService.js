@@ -10,7 +10,7 @@
         var productsServiceFactory = {};
 
         var getProductsFromCategory = function(categoryId) {
-            return $http.get(baseService.url + "api/v1/spa/products/?categoryId=" + categoryId)
+            return $http.get(baseService.url + "api/v1/spa/products/?categoryId=" + categoryId, { skipAuthorization: true })
                 .then(function(data) {
                         return data;
                     }, function(error) {
@@ -21,7 +21,7 @@
         };
 
         var getProducts = function () {
-            return $http.get(baseService.url + "api/v1/spa/products")
+            return $http.get(baseService.url + "api/v1/spa/products", { skipAuthorization: true })
                 .then(function(data) {
                         return data;
                     }, function(error) {
@@ -32,7 +32,7 @@
         };
 
         var getProduct = function (productId) {
-            return $http.get(baseService.url + "api/v1/spa/products/" + productId)
+            return $http.get(baseService.url + "api/v1/spa/products/" + productId, { skipAuthorization: true })
                 .then(function(data) {
                         return data;
                     }, function(error) {

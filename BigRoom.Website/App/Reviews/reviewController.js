@@ -3,9 +3,9 @@
         .module("BigRoomApp")
         .controller("ReviewController", ReviewController);
 
-    ReviewController.$inject = ["$scope", "$routeParams", "reviewService", "toaster"];
+    ReviewController.$inject = ["$scope", "$stateParams", "reviewService", "toaster"];
 
-    function ReviewController($scope, $routeParams, reviewService, toaster) {
+    function ReviewController($scope, $stateParams, reviewService, toaster) {
         var reviewCtrl = this;
 
         reviewCtrl.review = {};
@@ -19,7 +19,7 @@
         ];
 
         reviewCtrl.addReview = function (review) {
-            review.ProductId = $routeParams.id;
+            review.ProductId = $stateParams.id;
             console.log(review);
 
             reviewService.addReview(review).then(function(serverData) {
@@ -28,7 +28,7 @@
                     toaster.pop({
                         type: 'success',
                         title: 'Review',
-                        body: 'Succsesfully submited!',
+                        body: 'Succsesfully submited !',
                         showCloseButton: true
                     });
                 } else {

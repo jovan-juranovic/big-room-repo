@@ -13,13 +13,12 @@ namespace BigRoom.Model
             this.CartItems = new List<CartItem>();
         }
 
-        public int Id { get; set; }
+        public Guid Id { get; set; }
         public DateTime? OrderDate { get; set; }
         public decimal? Subtotal { get; set; }
         public decimal? ShippingTotal { get; set; }
         public decimal? TotalAmount { get; set; }
         public string Comment { get; set; }
-        public string OrderNumber { get; set; }
 
         [Required]
         public CartStatus Status { get; set; }

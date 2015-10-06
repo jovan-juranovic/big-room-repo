@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BigRoom.Model
@@ -23,7 +24,7 @@ namespace BigRoom.Model
         public string Comment { get; set; }
 
         // Foreign keys
-        public int CartId { get; set; }
+        public Guid CartId { get; set; }
         public int ProductId { get; set; }
 
         public virtual Cart Cart { get; set; }

@@ -10,7 +10,7 @@
         var categoriesServiceFactory = {};
 
         var getCategories = function() {
-            return $http.get(baseService.url + "api/v1/spa/categories")
+            return $http.get(baseService.url + "api/v1/spa/categories", { skipAuthorization: true })
                 .then(function(data) {
                         return data;
                     }, function(error) {

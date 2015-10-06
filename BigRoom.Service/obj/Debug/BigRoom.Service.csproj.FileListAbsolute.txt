@@ -160,3 +160,4 @@ C:\git\big-room-repo\BigRoom.Service\bin\zh-Hant\System.Spatial.resources.dll
 C:\git\big-room-repo\BigRoom.Service\obj\Debug\BigRoom.Service.csprojResolveAssemblyReference.cache
 C:\git\big-room-repo\BigRoom.Service\obj\Debug\BigRoom.Service.dll
 C:\git\big-room-repo\BigRoom.Service\obj\Debug\BigRoom.Service.pdb
+C:\git\big-room-repo\BigRoom.Service\bin\JWT.dll

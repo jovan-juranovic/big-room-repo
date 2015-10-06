@@ -45,7 +45,8 @@ namespace BigRoom.Service.Controllers.API
                     Id = product.Id,
                     Name = product.Name,
                     Description = product.Description,
-                    Price = product.Price.GetValueOrDefault()
+                    Price = product.Price.GetValueOrDefault(),
+                    ShippingPrice = product.ShippingPrice.GetValueOrDefault()
                 }).ToList();
         }
 
@@ -59,6 +60,7 @@ namespace BigRoom.Service.Controllers.API
                 Name = product.Name,
                 Description = product.Description,
                 Price = product.Price.GetValueOrDefault(),
+                ShippingPrice = product.ShippingPrice.GetValueOrDefault(),
                 AverigeRating = GetAvgRating(reviews),
                 ProductDetails = GetProductDetails(product),
                 ProductReviews = GetProductReviews(reviews)

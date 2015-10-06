@@ -14,6 +14,7 @@ namespace BigRoom.Service.Models.ProductVms
         public string Name { get; set; }
         public string Description { get; set; }
         public decimal Price { get; set; }
+        public decimal ShippingPrice { get; set; }
         public string AverigeRating { get; set; }
 
         public List<ProductDetailVM> ProductDetails { get; set; }

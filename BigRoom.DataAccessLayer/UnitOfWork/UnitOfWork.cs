@@ -9,7 +9,10 @@ namespace BigRoom.DataAccessLayer.UnitOfWork
         private BigRoomContext ctx = new BigRoomContext();
         private IRepository<Category> categoryRepository;
         private IRepository<Product> productRepository;
-        private IRepository<ProductReview> reviewRepository; 
+        private IRepository<ProductReview> reviewRepository;
+        private IRepository<Cart> cartRepository;
+        private IRepository<CartItem> cartItemRepository;
+        private IRepository<Country> countryRepository;
 
         public IRepository<Category> CategoryRepository
         {
@@ -47,6 +50,45 @@ namespace BigRoom.DataAccessLayer.UnitOfWork
                 }
 
                 return reviewRepository;
+            }
+        }
+
+        public IRepository<Cart> CartRepository
+        {
+            get
+            {
+                if (this.cartRepository == null)
+                {
+                    this.cartRepository = new Repository<Cart>(ctx);
+                }
+
+                return cartRepository;
+            }
+        }
+
+        public IRepository<CartItem> CartItemRepository
+        {
+            get
+            {
+                if (this.cartItemRepository == null)
+                {
+                    this.cartItemRepository = new Repository<CartItem>(ctx);
+                }
+
+                return cartItemRepository;
+            }
+        }
+
+        public IRepository<Country> CountryRepository
+        {
+            get
+            {
+                if (this.countryRepository == null)
+                {
+                    this.countryRepository = new Repository<Country>(ctx);
+                }
+
+                return countryRepository;
             }
         }
 

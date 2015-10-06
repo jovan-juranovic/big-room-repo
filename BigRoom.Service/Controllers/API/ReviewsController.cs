@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
 using BigRoom.BusinessLayer.Interfaces;
 using BigRoom.BusinessLayer.Services;
@@ -48,6 +45,7 @@ namespace BigRoom.Service.Controllers.API
             throw new NotImplementedException();
         }
 
+        [Authorize]
         public IHttpActionResult Post(ReviewRequest reviewRequest)
         {
             if (IsNotValid(reviewRequest))
@@ -55,7 +53,7 @@ namespace BigRoom.Service.Controllers.API
                 return this.BadRequest("Validation failed !");
             }
 
-            ProductReview review = MapReviewFromRequest(reviewRequest);
+            ProductReview review = CreateReviewFromRequest(reviewRequest);
 
             if (reviewService.InsertReview(review))
             {
@@ -75,7 +73,7 @@ namespace BigRoom.Service.Controllers.API
                    (review.Rating < 1 || review.Rating > 5);
         }
 
-        private ProductReview MapReviewFromRequest(ReviewRequest reviewRequest)
+        private ProductReview CreateReviewFromRequest(ReviewRequest reviewRequest)
         {
             return new ProductReview
             {
@@ -84,7 +82,7 @@ namespace BigRoom.Service.Controllers.API
                 PostingDate = DateTime.Now,
                 Rating = reviewRequest.Rating,
                 ProductId = reviewRequest.ProductId,
-                UserId = 1,
+                UserId = Convert.ToInt32(User.Identity.Name),
                 Approved = false
             };
         }
