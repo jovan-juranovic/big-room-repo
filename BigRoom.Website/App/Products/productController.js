@@ -19,7 +19,12 @@
                     showCloseButton: true
                 });
             } else {
-                store.set("item_" + product.Id, product);
+                store.set("item_" + product.Id, {
+                    Id: product.Id,
+                    Price: product.Price,
+                    ShippingPrice: product.ShippingPrice,
+                    Quantity: 1
+                });
                 $rootScope.$broadcast("addToCart", {});
                 toaster.pop({
                     type: "success",

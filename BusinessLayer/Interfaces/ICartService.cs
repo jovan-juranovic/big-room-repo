@@ -1,9 +1,10 @@
 using System;
+using BigRoom.Model;
 
 namespace BigRoom.BusinessLayer.Interfaces
 {
     public interface ICartService
     {
-        Guid GetOrCreateCart(int userId);
+        bool CreateNewOrder(Cart cart);
     }
 }

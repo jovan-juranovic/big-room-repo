@@ -13,12 +13,13 @@ namespace BigRoom.Model
             this.CartItems = new List<CartItem>();
         }
 
-        public Guid Id { get; set; }
+        public int Id { get; set; }
         public DateTime? OrderDate { get; set; }
         public decimal? Subtotal { get; set; }
         public decimal? ShippingTotal { get; set; }
         public decimal? TotalAmount { get; set; }
         public string Comment { get; set; }
+        public Guid OrderNumber { get; set; }
 
         [Required]
         public CartStatus Status { get; set; }
@@ -28,6 +29,8 @@ namespace BigRoom.Model
 
         public virtual User User { get; set; }
         public virtual ICollection<CartItem> CartItems { get; set; }
+        public virtual ShippingDetail ShippingDetail { get; set; }
+        public virtual CreditCard CreditCard { get; set; }
     }
 
     public enum CartStatus

@@ -50,12 +50,15 @@
             });
         };
 
+        cartCtrl.addCart = function(cart) {
+            store.set("cart", cart);
+        };
+
         initData = function () {
             var array = [];
             for (var i = 0; i < localStorage.length; i++) {
                 if (localStorage.key(i).substring(0, 4) === "item") {
                     var item = JSON.parse(localStorage.getItem(localStorage.key(i)));
-                    item.Quantity = 1;
                     array.push(item);
                 }
             }

@@ -45,7 +45,7 @@ namespace BigRoom.Service.Controllers.API
             throw new NotImplementedException();
         }
 
-        [Authorize]
+        //[Authorize]
         public IHttpActionResult Post(ReviewRequest reviewRequest)
         {
             if (IsNotValid(reviewRequest))
@@ -82,7 +82,7 @@ namespace BigRoom.Service.Controllers.API
                 PostingDate = DateTime.Now,
                 Rating = reviewRequest.Rating,
                 ProductId = reviewRequest.ProductId,
-                UserId = Convert.ToInt32(User.Identity.Name),
+                UserId = 1,
                 Approved = false
             };
         }

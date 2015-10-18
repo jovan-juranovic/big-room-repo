@@ -187,6 +187,7 @@
     <Compile Include="Controllers\API\CartItemsController.cs" />
     <Compile Include="Controllers\API\CategoriesController.cs" />
     <Compile Include="Controllers\API\CountriesController.cs" />
+    <Compile Include="Controllers\API\OrdersController.cs" />
     <Compile Include="Controllers\API\ProductsController.cs" />
     <Compile Include="Controllers\API\ReviewsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -195,6 +196,9 @@
     </Compile>
     <Compile Include="Models\CartVms\AddProductRequestVM.cs" />
     <Compile Include="Models\CartVms\CartItemVM.cs" />
+    <Compile Include="Models\CartVms\CustomerVM.cs" />
+    <Compile Include="Models\CartVms\OrderVM.cs" />
+    <Compile Include="Models\CartVms\PaymentVM.cs" />
     <Compile Include="Models\CategoryVms\CategoryVM.cs" />
     <Compile Include="Models\JWTVms\JWTRequest.cs" />
     <Compile Include="Models\JWTVms\JWTResponse.cs" />

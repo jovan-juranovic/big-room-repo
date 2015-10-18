@@ -37,7 +37,21 @@
                     templateUrl: "/app/views/customer-info.html",
                     controller: "CustomerInfoController",
                     controllerAs: "customerCtrl"
+                })
+                .state("payment", {
+                    parent: "cart",
+                    url: "/payment",
+                    templateUrl: "/app/views/payment.html",
+                    controller: "PaymentController",
+                    controllerAs: "paymentCtrl"
                 });
+
+            $stateProvider.state("orders", {
+                url: "/orders",
+                templateUrl: "/app/views/orders.html",
+                controller: "OrderController",
+                controllerAs: "orderCtrl"
+            });
 
             $stateProvider.state("signup", {
                 url: "/signup",

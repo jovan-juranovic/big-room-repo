@@ -4,7 +4,7 @@
         <div class="progress-bar progress-bar-danger progress-bar-striped" style="width: 35%">
             <cite>Placing Order</cite>
         </div>
-        <div ng-show="progressCtrl.isCustomerInfoPage()" class="progress-bar progress-bar-warning progress-bar-striped" style="width: 35%">
+        <div ng-show="progressCtrl.isCustomerInfoPage() || progressCtrl.isPaymentMethodPage()" class="progress-bar progress-bar-warning progress-bar-striped" style="width: 35%">
             <cite>Customer Info</cite>
         </div>
         <div ng-show="progressCtrl.isPaymentMethodPage()" class="progress-bar progress-bar-success progress-bar-striped" style="width: 30%">

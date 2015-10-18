@@ -24,7 +24,7 @@ namespace BigRoom.Model
         public string Comment { get; set; }
 
         // Foreign keys
-        public Guid CartId { get; set; }
+        public int CartId { get; set; }
         public int ProductId { get; set; }
 
         public virtual Cart Cart { get; set; }

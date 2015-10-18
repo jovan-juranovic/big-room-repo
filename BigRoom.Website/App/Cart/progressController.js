@@ -16,7 +16,7 @@
         };
 
         progressCtrl.isPaymentMethodPage = function() {
-            if ($state.current.name === "payment-method") {
+            if ($state.current.name === "payment") {
                 return true;
             }
             return false;

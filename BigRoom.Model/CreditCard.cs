@@ -7,6 +7,7 @@ namespace BigRoom.Model
     [Table("CreditCard")]
     public class CreditCard
     {
+        [Key, ForeignKey("Cart"), DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Id { get; set; }
 
         [Required]
@@ -18,9 +19,6 @@ namespace BigRoom.Model
         [Required]
         public DateTime Expiration { get; set; }
 
-        // Foreign key
-        public int UserId { get; set; }
-
-        public User User { get; set; }
+        public virtual Cart Cart { get; set; }
     }
 }

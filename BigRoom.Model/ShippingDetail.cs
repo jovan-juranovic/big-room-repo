@@ -6,6 +6,7 @@ namespace BigRoom.Model
     [Table("ShippingDetail")]
     public class ShippingDetail
     {
+        [Key, ForeignKey("Cart"), DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int Id { get; set; }
 
         [Required, MaxLength(100)]
@@ -28,10 +29,9 @@ namespace BigRoom.Model
         public string PhoneNumber { get; set; }
 
         // Foreign keys
-        public int UserId { get; set; }
         public int CountryId { get; set; }
 
-        public virtual User User { get; set; }
+        public virtual Cart Cart { get; set; }
         public virtual Country Country { get; set; }
     }
 }

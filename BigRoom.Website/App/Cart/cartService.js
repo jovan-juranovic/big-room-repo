@@ -20,7 +20,19 @@
                 );
         };
 
+        var placeOrder = function (order) {
+            return $http.post(baseService.url + "api/v1/spa/orders", order)
+                .then(function(data) {
+                        return data;
+                    }, function(error) {
+                        console.log(error);
+                        return error;
+                    }
+                );
+        };
+
         cartServiceFactory.getCountries = getCountries;
+        cartServiceFactory.placeOrder = placeOrder;
 
         return cartServiceFactory;
     }

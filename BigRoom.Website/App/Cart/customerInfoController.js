@@ -5,7 +5,7 @@
 
     CustomerInfoController.$inject = ["cartService", "store"];
 
-    function CustomerInfoController(cartService,store) {
+    function CustomerInfoController(cartService, store) {
         var customerCtrl = this;
 
         customerCtrl.countries = [];
@@ -13,6 +13,10 @@
 
         customerCtrl.addCustomer = function(customer) {
             store.set("customer", customer);
+        };
+
+        customerCtrl.removeItems = function() {
+            store.remove("items");
         };
 
         initData = function() {

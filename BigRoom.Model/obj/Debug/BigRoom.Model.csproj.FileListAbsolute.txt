@@ -6,3 +6,4 @@ C:\git\big-room-repo\BigRoom.Model\bin\Debug\BigRoom.Model.dll
 C:\git\big-room-repo\BigRoom.Model\bin\Debug\BigRoom.Model.pdb
 C:\git\big-room-repo\BigRoom.Model\obj\Debug\BigRoom.Model.dll
 C:\git\big-room-repo\BigRoom.Model\obj\Debug\BigRoom.Model.pdb
+C:\git\big-room-repo\BigRoom.Model\obj\Debug\BigRoom.Model.csprojResolveAssemblyReference.cache

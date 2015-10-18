@@ -6,7 +6,5 @@ namespace BigRoom.BusinessLayer.Interfaces
 {
     public interface ICartItemService
     {
-        bool InsertCartItem(CartItem item);
-        IEnumerable<CartItem> GetCartItems(Guid cartGuid);
     }
 }
