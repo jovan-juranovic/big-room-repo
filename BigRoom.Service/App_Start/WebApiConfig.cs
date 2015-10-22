@@ -13,6 +13,11 @@ namespace BigRoom.Service
                 InnerHandler = new HttpControllerDispatcher(config)
             };
 
+            BasicAuthHandler basicAuthHandler = new BasicAuthHandler
+            {
+                InnerHandler = new HttpControllerDispatcher(config)
+            };
+
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "api/v1/spa/{controller}/{id}",
@@ -24,7 +29,9 @@ namespace BigRoom.Service
             config.Routes.MapHttpRoute(
                 name: "AdminAPI",
                 routeTemplate: "api/v1/mvc/{controller}/{id}",
-                defaults: new {id = RouteParameter.Optional}
+                defaults: new {id = RouteParameter.Optional},
+                constraints: null,
+                handler: basicAuthHandler
                 );
 
             config.EnableCors();

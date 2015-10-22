@@ -52,9 +52,25 @@ namespace BigRoom.DataAccessLayer.Repositories
             dbSet.Add(entity);
         }
 
-        public virtual void Delete(TEntity entity)
+        public virtual void Update(TEntity entityToUpdate)
         {
-            throw new NotImplementedException();
+            dbSet.Attach(entityToUpdate);
+            ctx.Entry(entityToUpdate).State = EntityState.Modified;
+        }
+
+        public virtual void Delete(int id)
+        {
+            TEntity entityToDelete = dbSet.Find(id);
+            Delete(entityToDelete);
+        }
+
+        public virtual void Delete(TEntity entityToDelete)
+        {
+            if (ctx.Entry(entityToDelete).State == EntityState.Detached)
+            {
+                dbSet.Attach(entityToDelete);
+            }
+            dbSet.Remove(entityToDelete);
         }
     }
 }

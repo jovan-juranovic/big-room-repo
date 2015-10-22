@@ -23,7 +23,7 @@ namespace BigRoom.Service.Common.Handlers
             try
             {
                 HttpRequestHeaders headers = request.Headers;
-                if (headers.Authorization != null && Scheme.Equals(headers.Authorization.Scheme))
+                if (headers.Authorization != null && headers.Authorization.Scheme == Scheme)
                 {
                     string secretKey = ConfigurationManager.AppSettings["SecretKey"];
                     string token = headers.Authorization.Parameter;

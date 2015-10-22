@@ -24,6 +24,8 @@ namespace BigRoom.Model
         [Required]
         public string Password { get; set; }
 
+        [Required]
+        public bool IsAdmin { get; set; }
         
         public virtual ICollection<ProductReview> ProductReviews { get; set; }
         public virtual ICollection<Cart> Carts { get; set; }

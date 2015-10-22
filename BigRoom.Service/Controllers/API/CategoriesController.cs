@@ -3,6 +3,7 @@ using System.Linq;
 using System.Web.Http;
 using BigRoom.BusinessLayer.Interfaces;
 using BigRoom.BusinessLayer.Services;
+using BigRoom.Model;
 using BigRoom.Service.Common;
 using BigRoom.Service.Models.CategoryVms;
 
@@ -41,9 +42,15 @@ namespace BigRoom.Service.Controllers.API
             }).ToList();
         }
 
-        public string Get(int id)
+        [Authorize]
+        public CategoryVM Get(int id)
         {
-            return "value";
+            Category category = categoryService.FindCategory(id);
+            return new CategoryVM
+            {
+                Id = category.Id,
+                Name = category.Name
+            };
         }
 
         public void Post([FromBody]string value)

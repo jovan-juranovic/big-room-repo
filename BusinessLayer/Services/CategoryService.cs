@@ -14,5 +14,13 @@ namespace BigRoom.BusinessLayer.Services
                 return uow.CategoryRepository.GetAll();
             }
         }
+
+        public Category FindCategory(int id)
+        {
+            using (var uow = new UnitOfWork())
+            {
+                return uow.CategoryRepository.Find(id);
+            }
+        }
     }
 }

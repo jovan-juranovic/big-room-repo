@@ -7,12 +7,26 @@ namespace BigRoom.DataAccessLayer.UnitOfWork
     public class UnitOfWork : IDisposable
     {
         private BigRoomContext ctx = new BigRoomContext();
+        private IRepository<User> userRepository; 
         private IRepository<Category> categoryRepository;
         private IRepository<Product> productRepository;
         private IRepository<ProductReview> reviewRepository;
         private IRepository<Cart> cartRepository;
         private IRepository<CartItem> cartItemRepository;
         private IRepository<Country> countryRepository;
+
+        public IRepository<User> UserRepository
+        {
+            get
+            {
+                if (this.userRepository == null)
+                {
+                    this.userRepository = new Repository<User>(ctx);
+                }
+
+                return userRepository;
+            }
+        }
 
         public IRepository<Category> CategoryRepository
         {

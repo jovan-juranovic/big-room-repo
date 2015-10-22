@@ -1,0 +1,29 @@
+﻿<script type="text/html" id="addEditUser">
+    <div class="modal fade" id="AddRowModal" tabindex="-1" role="dialog" aria-labelledby="AddRowModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 data-bind="visible: isNewUser">Add New User</h4>
+                    <h4 data-bind="visible: !isNewUser">Edit User</h4>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Name:</label>
+                            <input type="text" data-bind="value: name" class="form-control" id="name" placeholder="Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" data-bind="value: email" class="form-control" id="email" placeholder="Email">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button data-dismiss="modal" class="btn btn-danger">Close <i class="glyphicon glyphicon-remove"></i></button>
+                    <button class="btn btn-success" data-bind="click: save">Save <i class="glyphicon glyphicon-ok"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
