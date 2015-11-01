@@ -52,6 +52,22 @@ namespace BigRoom.Service.Controllers.API
             };
         }
 
+        public IHttpActionResult Post(UserVM request)
+        {
+            if (IsValid(request))
+            {
+                User user = GetMappedUser(request);
+                if (this.userService.CreateUser(user))
+                {
+                    return this.Created(user);
+                }
+
+                return this.BadRequest();
+            }
+
+            return this.BadRequest("User is not valid.");
+        }
+
         public IHttpActionResult Put(UserVM request)
         {
             if (IsValid(request))
@@ -71,13 +87,39 @@ namespace BigRoom.Service.Controllers.API
                     return this.Ok(users);
                 }
 
-                return this.InternalServerError();
+                return this.BadRequest();
             }
 
             return this.BadRequest("User is not valid.");
         }
 
+        public IHttpActionResult Delete(int id)
+        {
+            User user = this.userService.FindUser(id);
+            if (user == null)
+            {
+                return this.NotFound();
+            }
+
+            if (this.userService.DeleteUser(id))
+            {
+                return this.Ok("Success");
+            }
+
+            return this.BadRequest();
+        }
+
         #endregion
+
+        private static User GetMappedUser(UserVM request)
+        {
+            return new User
+            {
+                Name = request.Name,
+                Email = request.Email,
+                IsAdmin = false
+            };
+        }
 
         private static bool IsValid(UserVM user)
         {

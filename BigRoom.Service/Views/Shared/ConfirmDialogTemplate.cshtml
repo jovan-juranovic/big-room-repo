@@ -1,0 +1,21 @@
+﻿<script type="text/html" id="ConfirmDialogTemplate">
+    <div id="confirmDialogContainer" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header" data-bind="visible: title">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true" data-bind="visible: canClose">×</button>
+                    <h3 id="myModalLabel" data-bind="html: title"></h3>
+                </div>
+                <div class="modal-body">
+                    <p data-bind="html: question"></p>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-default" data-dismiss="modal" aria-hidden="true" data-bind="visible: showCancel">Cancel</button>
+                    <button class="btn btn-default btn-primary" data-dismiss="modal" aria-hidden="true" data-bind="visible: showYesNo, click: yesCallback">Yes</button>
+                    <button class="btn btn-default" data-dismiss="modal" aria-hidden="true" data-bind="visible: showYesNo, click: noCallback">No</button>
+                    <button class="btn btn-default btn-primary" data-dismiss="modal" data-bind="visible: !showYesNo, click: confirm">Ok</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>

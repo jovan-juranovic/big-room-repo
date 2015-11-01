@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BigRoom.Service", "BigRoom.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BigRoom.BusinessLayer", "BusinessLayer\BigRoom.BusinessLayer.csproj", "{A39480D6-C746-4582-BF9A-D2831CD546E8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BigRoom.Tests", "BigRoom.Tests\BigRoom.Tests.csproj", "{CD20E48D-9DE3-4DAC-9C2D-D19CC58D18D4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,6 +45,10 @@ Global
 		{A39480D6-C746-4582-BF9A-D2831CD546E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A39480D6-C746-4582-BF9A-D2831CD546E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A39480D6-C746-4582-BF9A-D2831CD546E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD20E48D-9DE3-4DAC-9C2D-D19CC58D18D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD20E48D-9DE3-4DAC-9C2D-D19CC58D18D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD20E48D-9DE3-4DAC-9C2D-D19CC58D18D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD20E48D-9DE3-4DAC-9C2D-D19CC58D18D4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

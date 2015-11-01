@@ -3,6 +3,7 @@ using System.Linq;
 using System.Web.Http;
 using BigRoom.BusinessLayer.Interfaces;
 using BigRoom.BusinessLayer.Services;
+using BigRoom.BusinessLayer.Util;
 using BigRoom.Model;
 using BigRoom.Service.Common;
 using BigRoom.Service.Models.CategoryVms;
@@ -35,11 +36,7 @@ namespace BigRoom.Service.Controllers.API
 
         public IEnumerable<CategoryVM> Get()
         {
-            return categoryService.GetCategories().Select(c => new CategoryVM
-            {
-                Id = c.Id,
-                Name = c.Name
-            }).ToList();
+            return GetCategories();
         }
 
         [Authorize]
@@ -53,18 +50,77 @@ namespace BigRoom.Service.Controllers.API
             };
         }
 
-        public void Post([FromBody]string value)
+        public IHttpActionResult Post(CategoryVM request)
         {
+            if (request.Name.IsNullOrEmpty())
+            {
+                return this.BadRequest("Category name must be supplied.");
+            }
+
+            Category category = new Category
+            {
+                Name = request.Name
+            };
+
+            if (this.categoryService.CreateCategory(category))
+            {
+                List<CategoryVM> categories = GetCategories();
+                return this.Created(categories);
+            }
+
+            return this.BadRequest();
         }
 
-        public void Put(int id, [FromBody]string value)
+        public IHttpActionResult Put(CategoryVM request)
         {
+            if (request.Name.IsNullOrEmpty() && request.Id < 1)
+            {
+                return this.BadRequest("Category not valid.");
+            }
+
+            Category category = this.categoryService.FindCategory(request.Id);
+            if (category == null)
+            {
+                return this.NotFound();
+            }
+
+            category.Name = request.Name;
+
+            if (this.categoryService.EditCategory(category))
+            {
+                List<CategoryVM> categories = GetCategories();
+                return this.Ok(categories);
+            }
+
+            return this.BadRequest();
         }
 
-        public void Delete(int id)
+        public IHttpActionResult Delete(int id)
         {
+            Category category = this.categoryService.FindCategory(id);
+            if (category == null)
+            {
+                return this.NotFound();
+            }
+
+            if (this.categoryService.DeleteCategory(id))
+            {
+                List<CategoryVM> categories = GetCategories();
+                return this.Ok(categories);
+            }
+
+            return this.BadRequest();
         }
 
         #endregion
+
+        private List<CategoryVM> GetCategories()
+        {
+            return categoryService.GetCategories().Select(c => new CategoryVM
+            {
+                Id = c.Id,
+                Name = c.Name
+            }).ToList();
+        }
     }
 }

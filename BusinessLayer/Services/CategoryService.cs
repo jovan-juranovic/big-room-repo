@@ -22,5 +22,32 @@ namespace BigRoom.BusinessLayer.Services
                 return uow.CategoryRepository.Find(id);
             }
         }
+
+        public bool CreateCategory(Category category)
+        {
+            using (var uow = new UnitOfWork())
+            {
+                uow.CategoryRepository.Insert(category);
+                return uow.Save() == 1;
+            }
+        }
+
+        public bool EditCategory(Category category)
+        {
+            using (var uow = new UnitOfWork())
+            {
+                uow.CategoryRepository.Update(category);
+                return uow.Save() > 0;
+            }
+        }
+
+        public bool DeleteCategory(int id)
+        {
+            using (var uow = new UnitOfWork())
+            {
+                uow.CategoryRepository.Delete(id);
+                return uow.Save() > 0;
+            }
+        }
     }
 }

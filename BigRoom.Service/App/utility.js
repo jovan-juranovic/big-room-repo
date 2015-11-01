@@ -1,5 +1,6 @@
 ﻿window.util.utility = (function () {
-    var rebuildObservableArray, activateModalFromTemplate, postJson, putJson;
+    var rebuildObservableArray, activateModalFromTemplate, postJson, putJson, deleteJson,
+        dialog, reloadDataTable, initDataTable;
 
     rebuildObservableArray = function (observableArray, serverArray, ItemFactory) {
         var newArray = [];
@@ -8,6 +9,24 @@
         });
 
         observableArray(newArray);
+    };
+
+    initDataTable = function(tableId, observableArray, serverArray, ItemFactory) {
+        rebuildObservableArray(observableArray, serverArray, ItemFactory);
+        $("#" + tableId).DataTable({
+            responsive: true
+        });
+    };
+
+    reloadDataTable = function (tableId, observableArray, serverArray, ItemFactory) {
+        $("#" + tableId).DataTable().clear();
+        $("#" + tableId).DataTable().destroy();
+
+        rebuildObservableArray(observableArray, serverArray, ItemFactory);
+
+        $("#" + tableId).DataTable({
+            responsive: true
+        });
     };
 
     activateModalFromTemplate = function (module, templateName) {
@@ -46,6 +65,20 @@
         }
     };
 
+    dialog = function(title, question, yesCallback, noCallback) {
+        var confirmDialogModule = {
+            showCancel: false,
+            showYesNo: true,
+            title: ko.observable(title),
+            question: ko.observable(question),
+            yesCallback: yesCallback,
+            noCallback: noCallback,
+            canClose: true
+        };
+
+        activateModalFromTemplate(confirmDialogModule, "ConfirmDialogTemplate");
+    };
+
     postJson = function (url, data, callback) {
 
         if ($.isFunction(data)) {
@@ -80,10 +113,30 @@
         });
     };
 
+    deleteJson = function(url, data, callback) {
+        if ($.isFunction(data)) {
+            callback = data;
+            data = undefined;
+        }
+
+        $.ajax({
+            dataType: 'json',
+            contentType: "application/json; charset=utf-8",
+            type: "DELETE",
+            url: url,
+            data: JSON.stringify(data),
+            success: callback
+        });
+    };
+
     return {
         rebuildObservableArray: rebuildObservableArray,
         activateModalFromTemplate: activateModalFromTemplate,
+        dialog: dialog,
+        reloadDataTable: reloadDataTable,
+        initDataTable: initDataTable,
         postJson: postJson,
-        putJson: putJson
+        putJson: putJson,
+        deleteJson: deleteJson
     };
 })();

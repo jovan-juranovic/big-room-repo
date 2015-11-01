@@ -40,5 +40,14 @@ namespace BigRoom.BusinessLayer.Services
                 return uow.Save() > 0;
             }
         }
+
+        public bool DeleteUser(int id)
+        {
+            using (var uow = new UnitOfWork())
+            {
+                uow.UserRepository.Delete(id);
+                return uow.Save() > 0;
+            }
+        }
     }
 }

@@ -1,4 +1,4 @@
-﻿window.vm.user = (function (ko, serverProxy, utility, userAddEditFactory, mediator) {
+﻿window.vm.user = (function (ko, serverProxy, utility, userAddEditFactory, mediator, toastr) {
 
     var self, initData, UserFactory, updateData;
     self = this;
@@ -16,6 +16,13 @@
         utility.activateModalFromTemplate(new userAddEditFactory(this.id), "addEditUser");
     };
 
+    UserFactory.prototype.remove = function () {
+        var userId = this.id;
+        utility.dialog("", "Are you sure you want to delete user?", function() {
+            serverProxy.deleteUser(userId, updateData);
+        });
+    };
+
     mediator.subscribe("UserAddEditModel.editUser", function (user, model) {
         serverProxy.editUser(user, function(serverData) {
             model.closeModal();
@@ -23,19 +30,21 @@
         });
     });
 
-    updateData = function(serverData) {
-        utility.rebuildObservableArray(self.users, serverData, UserFactory);
-    }
+    updateData = function (serverData) {
+        if (serverData.length > 0) {
+            utility.reloadDataTable("users-table", self.users, serverData, UserFactory);
+            toastr.success("User successfully updated!");
+        } else {
+            toastr.error("Error updating user!");
+        }
+    };
 
-    initData = function(serverData) {
-        utility.rebuildObservableArray(self.users, serverData, UserFactory);
-        $('#users-table').DataTable({
-            responsive: true
-        });
+    initData = function (serverData) {
+        utility.initDataTable("users-table", self.users, serverData, UserFactory);
     };
 
     serverProxy.getUsers(initData);
 
-})(ko, util.serverProxy, util.utility, vm.userAddEdit, mediator);
+})(ko, util.serverProxy, util.utility, vm.userAddEdit, mediator, toastr);
 
 ko.applyBindings(window.vm.user);

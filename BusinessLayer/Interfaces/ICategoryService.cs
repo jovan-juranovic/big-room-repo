@@ -7,5 +7,8 @@ namespace BigRoom.BusinessLayer.Interfaces
     {
         IEnumerable<Category> GetCategories();
         Category FindCategory(int id);
+        bool CreateCategory(Category category);
+        bool EditCategory(Category category);
+        bool DeleteCategory(int id);
     }
 }

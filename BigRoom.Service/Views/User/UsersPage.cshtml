@@ -24,7 +24,7 @@
                             <tr>
                                 <td class="text-center">
                                     <button data-bind="click: edit" class="btn btn-primary btn-circle"><i class="fa fa-edit fa-fw"></i></button>&nbsp;&nbsp;
-                                    <button class="btn btn-primary btn-circle"><i class="fa fa-remove fa-fw"></i></button>
+                                    <button data-bind="click: remove" class="btn btn-primary btn-circle"><i class="fa fa-remove fa-fw"></i></button>
                                 </td>
                                 <td data-bind="text: name"></td>
                                 <td data-bind="text: email"></td>
@@ -37,6 +37,7 @@
 
         <div id="templates" style="display: none">
             @Html.Partial("AddEditUser")
+            @Html.Partial("ConfirmDialogTemplate")
         </div>
     </div>
 </div>

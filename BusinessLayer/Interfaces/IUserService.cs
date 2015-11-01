@@ -9,5 +9,6 @@ namespace BigRoom.BusinessLayer.Interfaces
         User FindUser(int id);
         bool CreateUser(User user);
         bool EditUser(User user);
+        bool DeleteUser(int id);
     }
 }

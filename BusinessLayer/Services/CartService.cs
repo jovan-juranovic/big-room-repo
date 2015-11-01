@@ -11,11 +11,7 @@ namespace BigRoom.BusinessLayer.Services
             using (var uow = new UnitOfWork())
             {
                 uow.CartRepository.Insert(cart);
-                if (uow.Save() > 0)
-                {
-                    return true;
-                }
-                return false;
+                return uow.Save() > 0;
             }
         }
     }

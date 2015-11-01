@@ -6,6 +6,7 @@ using System.Net.Http.Headers;
 using System.Text;
 using BigRoom.BusinessLayer;
 using BigRoom.BusinessLayer.Services;
+using BigRoom.BusinessLayer.Util;
 using BigRoom.Model;
 
 namespace TestApplication
@@ -14,10 +15,10 @@ namespace TestApplication
     {
         static void Main(string[] args)
         {
-            //CountryService cs = new CountryService();
+            string creds = "jovan.juranovic@gmail.com:password123".ToBase64String();
 
             //Console.WriteLine(cs.GetCountries().First().Name);
-            //Console.ReadLine();
+            Console.ReadLine();
         }
     }
 }
