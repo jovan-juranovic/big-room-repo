@@ -17,6 +17,7 @@ namespace BigRoom.Service.Controllers.MVC
         {
             if (UserLoginService.CredentialsAreValid(userId, password))
             {
+                
                 string base64Value = string.Format("{0}:{1}", userId, password).ToBase64String();
                 HttpCookie cookie = new HttpCookie("token", base64Value)
                 {

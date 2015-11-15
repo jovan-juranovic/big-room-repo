@@ -25,7 +25,8 @@
         rebuildObservableArray(observableArray, serverArray, ItemFactory);
 
         $("#" + tableId).DataTable({
-            responsive: true
+            responsive: true,
+            scrollX: true
         });
     };
 

@@ -46,7 +46,9 @@ namespace BigRoom.Service.Controllers.API
                     Name = product.Name,
                     Description = product.Description,
                     Price = product.Price.GetValueOrDefault(),
-                    ShippingPrice = product.ShippingPrice.GetValueOrDefault()
+                    ShippingPrice = product.ShippingPrice.GetValueOrDefault(),
+                    Category = product.Category.Name,
+                    Status = product.Status.ToString()
                 }).ToList();
         }
 
@@ -61,6 +63,8 @@ namespace BigRoom.Service.Controllers.API
                 Description = product.Description,
                 Price = product.Price.GetValueOrDefault(),
                 ShippingPrice = product.ShippingPrice.GetValueOrDefault(),
+                CategoryId = product.CategoryId,
+                Status = product.Status.ToString(),
                 AverigeRating = GetAvgRating(reviews),
                 ProductDetails = GetProductDetails(product),
                 ProductReviews = GetProductReviews(reviews)
@@ -75,6 +79,7 @@ namespace BigRoom.Service.Controllers.API
         // PUT api/products/5
         public void Put(int id, [FromBody]string value)
         {
+
         }
 
         // DELETE api/products/5

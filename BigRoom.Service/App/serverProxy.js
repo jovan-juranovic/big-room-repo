@@ -2,6 +2,7 @@
 
     var usersUrl = "/api/v1/mvc/users/";
     var categoriesUrl = "/api/v1/mvc/categories/";
+    var productsUrl = "/api/v1/mvc/products/";
 
     return {
 
@@ -31,6 +32,15 @@
         },
         deleteCategory: function(id, callback) {
             utility.deleteJson(categoriesUrl + id, "", callback);
+        },
+        getProducts: function(callback) {
+            $.getJSON(productsUrl, callback);
+        },
+        getProduct: function(id, callback) {
+            $.getJSON(productsUrl + id, callback);
+        },
+        editProduct: function (product, callback) {
+            utility.putJson(productsUrl, category, callback);
         }
 };
 })(util.utility);
