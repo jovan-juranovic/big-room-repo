@@ -11,8 +11,11 @@ namespace BigRoom.Service.Models.CartVms
             this.Payment = new PaymentVM();
         }
 
+        public string OrderNumber { get; set; }
+        public string Username { get; set; }
         public decimal Subtotal { get; set; }
         public decimal ShippingTotal { get; set; }
+        public decimal Total { get; set; }
         public string Comment { get; set; }
 
         public CustomerVM Customer { get; set; }

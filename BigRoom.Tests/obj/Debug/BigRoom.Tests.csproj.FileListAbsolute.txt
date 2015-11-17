@@ -6,7 +6,6 @@ C:\git\big-room-repo\BigRoom.Tests\bin\Debug\BigRoom.Service.dll
 C:\git\big-room-repo\BigRoom.Tests\bin\Debug\NSubstitute.dll
 C:\git\big-room-repo\BigRoom.Tests\bin\Debug\nunit.framework.dll
 C:\git\big-room-repo\BigRoom.Tests\bin\Debug\System.Web.Http.dll
-C:\git\big-room-repo\BigRoom.Tests\bin\Debug\System.Web.Mvc.dll
 C:\git\big-room-repo\BigRoom.Tests\bin\Debug\System.Web.Optimization.dll
 C:\git\big-room-repo\BigRoom.Tests\bin\Debug\System.Net.Http.Formatting.dll
 C:\git\big-room-repo\BigRoom.Tests\bin\Debug\System.Web.Http.Cors.dll
@@ -23,7 +22,6 @@ C:\git\big-room-repo\BigRoom.Tests\bin\Debug\BigRoom.BusinessLayer.pdb
 C:\git\big-room-repo\BigRoom.Tests\bin\Debug\NSubstitute.xml
 C:\git\big-room-repo\BigRoom.Tests\bin\Debug\nunit.framework.xml
 C:\git\big-room-repo\BigRoom.Tests\bin\Debug\System.Web.Http.xml
-C:\git\big-room-repo\BigRoom.Tests\bin\Debug\System.Web.Mvc.xml
 C:\git\big-room-repo\BigRoom.Tests\bin\Debug\System.Net.Http.Formatting.xml
 C:\git\big-room-repo\BigRoom.Tests\bin\Debug\System.Web.Http.Cors.xml
 C:\git\big-room-repo\BigRoom.Tests\bin\Debug\System.Web.Http.Tracing.xml

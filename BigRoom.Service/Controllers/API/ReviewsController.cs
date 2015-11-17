@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Web.Http;
 using BigRoom.BusinessLayer.Interfaces;
 using BigRoom.BusinessLayer.Services;
@@ -37,7 +38,16 @@ namespace BigRoom.Service.Controllers.API
 
         public IEnumerable<ProductReviewVM> Get()
         {
-            throw new NotImplementedException();
+            return this.reviewService.GetUnapprovedReviews().Select(review => new ProductReviewVM
+            {
+                Id = review.Id,
+                Title = review.Title,
+                Comment = review.Comment,
+                PostingDate = review.PostingDate.ToShortDateString(),
+                ProductName = review.Product.Name,
+                UserEmail = review.User.Email,
+                Rating = review.Rating.Value
+            }).ToList();
         }
 
         public ProductReviewVM Get(int id)

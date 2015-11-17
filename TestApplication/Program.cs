@@ -16,8 +16,8 @@ namespace TestApplication
         static void Main(string[] args)
         {
             string creds = "jovan.juranovic@gmail.com:password123".ToBase64String();
-
-            //Console.WriteLine(cs.GetCountries().First().Name);
+            CountryService cs = new CountryService();
+            Console.WriteLine(cs.GetCountries().First().Name);
             Console.ReadLine();
         }
     }

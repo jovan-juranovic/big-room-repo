@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Web.Http;
@@ -22,6 +23,44 @@ namespace BigRoom.Service.Controllers.API
         public OrdersController(ICartService cartService)
         {
             this.cartService = cartService;
+        }
+
+        public IEnumerable<OrderVM> Get()
+        {
+            return this.cartService.GetActiveOrders().Select(order => new OrderVM
+            {
+                Username = order.User.Email,
+                OrderNumber = order.OrderNumber.ToString(),
+                Customer = new CustomerVM
+                {
+                    Address1 = order.ShippingDetail.Address1,
+                    Address2 = order.ShippingDetail.Address2,
+                    City = order.ShippingDetail.City,
+                    Country = order.ShippingDetail.CountryId,
+                    FullName = order.ShippingDetail.FullName,
+                    Phone = order.ShippingDetail.PhoneNumber,
+                    Region = order.ShippingDetail.Region,
+                    ZipCode = order.ShippingDetail.ZipCode
+                },
+                Payment = new PaymentVM
+                {
+                    NameOnCard = order.CreditCard.NameOnCard,
+                    CardNumber = order.CreditCard.CardNumber,
+                    Expiration = order.CreditCard.Expiration
+                },
+                Items = order.CartItems.Select(item => new CartItemVM
+                {
+                    Id = item.Id,
+                    Price = item.Price,
+                    ShippingPrice = item.ShippingPrice,
+                    Quantity = item.Quantity,
+                    Comment = item.Comment
+                }).ToList(),
+                ShippingTotal = order.ShippingTotal.Value,
+                Subtotal = order.Subtotal.Value,
+                Total = order.TotalAmount.Value,
+                Comment = order.Comment
+            }).ToList();
         }
 
         public IHttpActionResult Post(OrderVM order)

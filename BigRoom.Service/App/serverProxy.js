@@ -3,6 +3,8 @@
     var usersUrl = "/api/v1/mvc/users/";
     var categoriesUrl = "/api/v1/mvc/categories/";
     var productsUrl = "/api/v1/mvc/products/";
+    var reviewsUrl = "/api/v1/mvc/reviews/";
+    var ordersUrl = "/api/v1/mvc/orders/";
 
     return {
 
@@ -41,6 +43,12 @@
         },
         editProduct: function (product, callback) {
             utility.putJson(productsUrl, category, callback);
+        },
+        getReviews: function(callback) {
+            $.getJSON(reviewsUrl, callback);
+        },
+        getOrders: function(callback) {
+            $.getJSON(ordersUrl, callback);
         }
 };
 })(util.utility);

@@ -46,10 +46,11 @@
             }
         };
 
+        serverProxy.getCategories(initSelectList);
+
         if (id) {
             self.isNew = false;
             serverProxy.getProduct(id, initData);
-            serverProxy.getCategories(initSelectList);
         } else {
             self.isNew = true;
         }

@@ -8,6 +8,17 @@ namespace BigRoom.BusinessLayer.Services
 {
     public class ProductReviewService : IProductReviewService
     {
+        public IEnumerable<ProductReview> GetUnapprovedReviews()
+        {
+            using (var uow = new UnitOfWork())
+            {
+                return uow.ReviewRepository.GetAll(
+                    filter: review => review.Approved == false,
+                    orderBy: review => review.OrderBy(x => x.PostingDate),
+                    includeProperties: "User,Product");
+            }
+        }
+
         public IEnumerable<ProductReview> GetReviewsByProduct(int productId)
         {
             using (var uow = new UnitOfWork())

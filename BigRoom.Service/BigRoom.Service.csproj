@@ -198,7 +198,9 @@
     <Compile Include="Controllers\MVC\CategoryController.cs" />
     <Compile Include="Controllers\MVC\HomeController.cs" />
     <Compile Include="Controllers\MVC\LoginController.cs" />
+    <Compile Include="Controllers\MVC\OrderController.cs" />
     <Compile Include="Controllers\MVC\ProductController.cs" />
+    <Compile Include="Controllers\MVC\ReviewController.cs" />
     <Compile Include="Controllers\MVC\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -225,8 +227,10 @@
     <Content Include="App\utility.js" />
     <Content Include="App\ViewModels\Categories\categoryAddEditModel.js" />
     <Content Include="App\ViewModels\Categories\categoryModel.js" />
+    <Content Include="App\ViewModels\Orders\orderModel.js" />
     <Content Include="App\ViewModels\Products\productAddEditModel.js" />
     <Content Include="App\ViewModels\Products\productModel.js" />
+    <Content Include="App\ViewModels\Reviews\reviewModel.js" />
     <Content Include="App\ViewModels\Users\UserAddEditModel.js" />
     <Content Include="App\ViewModels\Users\userModel.js" />
     <Content Include="Areas\HelpPage\HelpPage.css" />
@@ -325,8 +329,12 @@
     <Content Include="Views\User\AddEditUser.cshtml" />
     <Content Include="Views\Shared\ConfirmDialogTemplate.cshtml" />
     <Content Include="Views\Product\AddEditProduct.cshtml" />
+    <None Include="Views\Order\Index.cshtml" />
+    <Content Include="Views\Order\OrdersPage.cshtml" />
     <None Include="Views\Product\Index.cshtml" />
     <Content Include="Views\Product\ProductsPage.cshtml" />
+    <None Include="Views\Review\Index.cshtml" />
+    <Content Include="Views\Review\ReviewsPage.cshtml" />
     <None Include="Views\User\Index.cshtml" />
     <Content Include="Views\User\UsersPage.cshtml" />
   </ItemGroup>

@@ -7,5 +7,6 @@ namespace BigRoom.BusinessLayer.Interfaces
     {
         IEnumerable<ProductReview> GetReviewsByProduct(int productId);
         bool InsertReview(ProductReview review);
+        IEnumerable<ProductReview> GetUnapprovedReviews();
     }
 }
