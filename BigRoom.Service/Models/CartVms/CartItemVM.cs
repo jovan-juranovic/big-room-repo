@@ -7,5 +7,7 @@
         public decimal Price { get; set; }
         public decimal ShippingPrice { get; set; }
         public string Comment { get; set; }
+        public string ProductName { get; set; }
+        public decimal TotalPrice { get; set; }
     }
 }

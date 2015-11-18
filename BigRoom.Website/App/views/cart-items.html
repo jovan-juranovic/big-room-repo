@@ -52,6 +52,10 @@
                    ng-hide="cartCtrl.cart.cartItems.length < 1" ng-click="cartCtrl.addCart(cartCtrl.cart)">
                     <span class="glyphicon glyphicon-ok"></span> Proceed to checkout
                 </a>
+                <a ui-sref="home" class="btn btn-danger" role="button"
+                        ng-hide="cartCtrl.cart.cartItems.length < 1" ng-click="cartCtrl.clearItems()">
+                    <span class="glyphicon glyphicon-remove"></span> Cancel order
+                </a>
             </div>
         </div>
     </div>

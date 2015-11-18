@@ -12,7 +12,7 @@
         customerCtrl.customer = {};
 
         customerCtrl.addCustomer = function(customer) {
-            store.set("customer", customer);
+            localStorage.setItem("customer", JSON.stringify(customer));
         };
 
         customerCtrl.removeItems = function() {

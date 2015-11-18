@@ -33,3 +33,5 @@ C:\git\big-room-repo\BigRoom.Tests\obj\Debug\BigRoom.Tests.csprojResolveAssembly
 C:\git\big-room-repo\BigRoom.Tests\obj\Debug\BigRoom.Tests.dll
 C:\git\big-room-repo\BigRoom.Tests\obj\Debug\BigRoom.Tests.pdb
 C:\git\big-room-repo\BigRoom.Tests\bin\Debug\BigRoom.Tests.dll.config
+C:\git\big-room-repo\BigRoom.Tests\bin\Debug\System.Web.Mvc.dll
+C:\git\big-room-repo\BigRoom.Tests\bin\Debug\System.Web.Mvc.xml

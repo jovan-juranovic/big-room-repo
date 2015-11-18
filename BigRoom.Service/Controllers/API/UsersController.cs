@@ -59,7 +59,8 @@ namespace BigRoom.Service.Controllers.API
                 User user = GetMappedUser(request);
                 if (this.userService.CreateUser(user))
                 {
-                    return this.Created(user);
+                    List<UserVM> users = GetUsers();
+                    return this.Ok(users);
                 }
 
                 return this.BadRequest();
@@ -103,7 +104,8 @@ namespace BigRoom.Service.Controllers.API
 
             if (this.userService.DeleteUser(id))
             {
-                return this.Ok("Success");
+                List<UserVM> users = GetUsers();
+                return this.Ok(users);
             }
 
             return this.BadRequest();
@@ -117,7 +119,8 @@ namespace BigRoom.Service.Controllers.API
             {
                 Name = request.Name,
                 Email = request.Email,
-                IsAdmin = false
+                IsAdmin = false,
+                Password = request.Password
             };
         }
 

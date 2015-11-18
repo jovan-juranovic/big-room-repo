@@ -24,8 +24,19 @@ namespace BigRoom.BusinessLayer.Services
                 return uow.CartRepository.GetAll(
                     filter: order => order.Status == CartStatus.Open,
                     orderBy: order => order.OrderBy(x => x.OrderDate),
-                    includeProperties: "User,CartItems,ShippingDetail,CreditCart");
+                    includeProperties: "User,CartItems,ShippingDetail,CreditCard");
             }
-        } 
+        }
+
+        public Cart GetActiveOrder(int id)
+        {
+            using (var uow = new UnitOfWork())
+            {
+                return uow.CartRepository.GetAll(
+                    filter: order => order.Id == id,
+                    orderBy: null,
+                    includeProperties: "User,CartItems,ShippingDetail,CreditCard").Single();
+            }
+        }
     }
 }

@@ -42,9 +42,21 @@
                 );
         };
 
+        var getTopProducts = function() {
+            return $http.get(baseService.url + "api/v1/spa/index/", { skipAuthorization: true })
+                .then(function(data) {
+                        return data;
+                    }, function(error) {
+                        console.log(error);
+                        return error;
+                    }
+                );
+        };
+
         productsServiceFactory.getProductsFromCategory = getProductsFromCategory;
         productsServiceFactory.getProducts = getProducts;
         productsServiceFactory.getProduct = getProduct;
+        productsServiceFactory.getTopProducts = getTopProducts;
 
         return productsServiceFactory;
     }

@@ -1,1 +1,47 @@
-﻿
+﻿<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">Orders</h1>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Showing all open orders
+            </div>
+            <div class="panel-body">
+                <div class="dataTables_wrapper">
+                    <table class="table table-striped table-bordered table-hover dataTable text-nowrap" id="orders-table">
+                        <thead>
+                            <tr>
+                                <th>Order Number</th>
+                                <th>Order Date</th>
+                                <th>User</th>
+                                <th>Comment</th>
+                                <th>Subtotal</th>
+                                <th>Shipping Total</th>
+                                <th>Total Amount</th>
+                            </tr>
+                        </thead>
+                        <tbody data-bind="foreach: orders">
+                            <tr>
+                                <td><a href data-bind="text: orderNumber, click: info"></a></td>
+                                <td data-bind="text: orderDate"></td>
+                                <td data-bind="text: user"></td>
+                                <td data-bind="text: comment"></td>
+                                <td data-bind="text: subtotal"></td>
+                                <td data-bind="text: shipping"></td>
+                                <td data-bind="text: total"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div id="templates" style="display: none">
+            @Html.Partial("ViewOrderInfo")
+        </div>
+    </div>
+</div>

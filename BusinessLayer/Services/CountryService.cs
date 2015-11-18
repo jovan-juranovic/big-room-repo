@@ -14,6 +14,14 @@ namespace BigRoom.BusinessLayer.Services
             {
                 return uow.CountryRepository.GetAll(orderBy: o => o.OrderBy(c => c.Name));
             }
-        } 
+        }
+
+        public Country FindCountry(int id)
+        {
+            using (var uow = new UnitOfWork())
+            {
+                return uow.CountryRepository.Find(id);
+            }
+        }
     }
 }

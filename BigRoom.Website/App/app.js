@@ -7,10 +7,10 @@
             "ui.router",
             "ngAnimate",
             "ngSanitize",
-            "toaster",
             "ui.select",
             "ngRoute",
-            "angular-loading-bar"
+            "angular-loading-bar",
+            "toastr"
         ])
         .constant("baseService", { "url": "http://localhost:5300/" });
 })();

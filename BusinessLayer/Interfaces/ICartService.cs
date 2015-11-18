@@ -8,5 +8,6 @@ namespace BigRoom.BusinessLayer.Interfaces
     {
         bool CreateNewOrder(Cart cart);
         IEnumerable<Cart> GetActiveOrders();
+        Cart GetActiveOrder(int id);
     }
 }

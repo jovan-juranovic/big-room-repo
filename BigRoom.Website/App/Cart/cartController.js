@@ -36,7 +36,7 @@
             angular.forEach(cartCtrl.cart.cartItems, function (value, key) {
                 if (value.Id === id) {
                     cartCtrl.cart.cartItems.splice(key, 1);
-                    store.remove("item_" + id);
+                    localStorage.removeItem("item_" + id);
                     $rootScope.$broadcast("removeFromCart", {});
                 }
             });
@@ -51,7 +51,17 @@
         };
 
         cartCtrl.addCart = function(cart) {
-            store.set("cart", cart);
+            localStorage.setItem("cart", JSON.stringify(cart));
+        };
+
+        cartCtrl.clearItems = function() {
+            var token = localStorage.getItem("jwt");
+            cartCtrl.cart.cartItems = [];
+            localStorage.clear();
+            $rootScope.$broadcast("removeAllFromCart", {});
+            if (token) {
+                localStorage.setItem("jwt", token);
+            }
         };
 
         initData = function () {

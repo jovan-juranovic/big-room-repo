@@ -17,5 +17,9 @@
         $rootScope.$on("removeFromCart", function (event, data) {
             menuCtrl.counter--;
         });
+
+        $rootScope.$on("removeAllFromCart", function (event, data) {
+            menuCtrl.counter = 0;
+        });
     };
 })();

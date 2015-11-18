@@ -190,7 +190,9 @@
     <Compile Include="Controllers\API\AuthController.cs" />
     <Compile Include="Controllers\API\CartItemsController.cs" />
     <Compile Include="Controllers\API\CategoriesController.cs" />
+    <Compile Include="Controllers\API\CountingController.cs" />
     <Compile Include="Controllers\API\CountriesController.cs" />
+    <Compile Include="Controllers\API\IndexController.cs" />
     <Compile Include="Controllers\API\OrdersController.cs" />
     <Compile Include="Controllers\API\ProductsController.cs" />
     <Compile Include="Controllers\API\ReviewsController.cs" />
@@ -211,6 +213,7 @@
     <Compile Include="Models\CartVms\OrderVM.cs" />
     <Compile Include="Models\CartVms\PaymentVM.cs" />
     <Compile Include="Models\CategoryVms\CategoryVM.cs" />
+    <Compile Include="Models\HomeVms\CountingVM.cs" />
     <Compile Include="Models\JWTVms\JWTRequest.cs" />
     <Compile Include="Models\JWTVms\JWTResponse.cs" />
     <Compile Include="Models\ProductVms\ProductDetailVM.cs" />
@@ -227,6 +230,8 @@
     <Content Include="App\utility.js" />
     <Content Include="App\ViewModels\Categories\categoryAddEditModel.js" />
     <Content Include="App\ViewModels\Categories\categoryModel.js" />
+    <Content Include="App\ViewModels\Home\indexModel.js" />
+    <Content Include="App\ViewModels\Orders\orderInfo.js" />
     <Content Include="App\ViewModels\Orders\orderModel.js" />
     <Content Include="App\ViewModels\Products\productAddEditModel.js" />
     <Content Include="App\ViewModels\Products\productModel.js" />
@@ -325,12 +330,14 @@
     <Content Include="Views\Category\CategoriesPage.cshtml" />
     <Content Include="Views\Category\AddEditCategory.cshtml" />
     <None Include="Views\Category\Index.cshtml" />
+    <Content Include="Views\Home\IndexPage.cshtml" />
     <None Include="Views\Login\Index.cshtml" />
     <Content Include="Views\User\AddEditUser.cshtml" />
     <Content Include="Views\Shared\ConfirmDialogTemplate.cshtml" />
     <Content Include="Views\Product\AddEditProduct.cshtml" />
     <None Include="Views\Order\Index.cshtml" />
     <Content Include="Views\Order\OrdersPage.cshtml" />
+    <Content Include="Views\Order\ViewOrderInfo.cshtml" />
     <None Include="Views\Product\Index.cshtml" />
     <Content Include="Views\Product\ProductsPage.cshtml" />
     <None Include="Views\Review\Index.cshtml" />

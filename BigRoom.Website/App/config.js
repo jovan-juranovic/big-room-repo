@@ -1,7 +1,11 @@
 ﻿(function() {
     angular
         .module("BigRoomApp")
-        .config(function ($urlRouterProvider, $stateProvider, jwtInterceptorProvider, $httpProvider) {
+        .config(function ($urlRouterProvider, $stateProvider, jwtInterceptorProvider, $httpProvider, toastrConfig) {
+
+            angular.extend(toastrConfig, {
+                closeButton: true
+            });
 
             $urlRouterProvider.otherwise("/home");
 
@@ -22,7 +26,10 @@
             $stateProvider
                 .state("cart", {
                     url: "/cart",
-                    templateUrl: "/app/views/cart.html"
+                    templateUrl: "/app/views/cart.html",
+                    data: {
+                        requiresLogin: true
+                    }
                 })
                 .state("cart-items", {
                     parent: "cart",
@@ -68,9 +75,9 @@
             });
 
             jwtInterceptorProvider.tokenGetter = function (store, jwtHelper) {
-                var token = store.get('jwt');
+                var token = localStorage.getItem('jwt');
                 if (token && jwtHelper.isTokenExpired(token)) {
-                    store.remove('jwt');
+                    localStorage.removeItem('jwt');
                     return undefined;
                 }
                 return token;
@@ -81,7 +88,7 @@
         .run(function ($rootScope, $state, store) {
             $rootScope.$on('$stateChangeStart', function (e, to) {
                 if (to.data && to.data.requiresLogin) {
-                    if (!store.get('jwt')) {
+                    if (!localStorage.getItem('jwt')) {
                         e.preventDefault();
                         $state.go('login');
                     }

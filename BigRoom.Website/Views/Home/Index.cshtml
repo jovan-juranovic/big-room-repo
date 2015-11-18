@@ -14,7 +14,7 @@
         <link href="~/Libraries/Bootstrap/css/shop-item.css" rel="stylesheet"/>
         <link href="~/Libraries/Angularjs/css/loading-bar.min.css" rel="stylesheet"/>
         <link href="~/Libraries/Angularjs/css/select.min.css" rel="stylesheet"/>
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/angularjs-toaster/0.4.15/toaster.min.css" rel="stylesheet" />
+        <link href="~/Libraries/Angularjs/css/angular-toastr.min.css" rel="stylesheet" />
         <style type="text/css">
             .minicart {
                 background: url(~/Libraries/Bootstrap/images/sprite.png);
@@ -39,21 +39,10 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" ui-sref="home">Start Bootstrap</a>
+                    <a class="navbar-brand" ui-sref="home">Home</a>
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav">
-                        <li>
-                            <a href="#">About</a>
-                        </li>
-                        <li>
-                            <a href="#">Services</a>
-                        </li>
-                        <li>
-                            <a href="#">Contact</a>
-                        </li>
-                    </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li role="presentation" class="active">
                             <a ui-sref="cart-items">
@@ -71,7 +60,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-3" ng-controller="CategoriesController as categoriesCtrl">
-                    <p class="lead">Shop name</p>
+                    <p class="lead">BigRoom Farmaceuticals</p>
                     <form novalidate>
                         <div class="form-group">
                             <div class="input-group">
@@ -137,7 +126,7 @@
         <script src="~/Libraries/Angularjs/js/loading-bar.min.js"></script>
         <script src="~/Libraries/Bootstrap/js/bootstrap.min.js"></script>
         <script src="~/Libraries/Angularjs/js/angular-animate.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/angularjs-toaster/0.4.15/toaster.min.js"></script>
+        <script src="~/Libraries/Angularjs/js/angular-toastr.tpls.min.js"></script>
         <!-- Load app main scripts -->
         <script src="~/App/app.js"></script>
         <script src="~/App/config.js"></script>

@@ -50,9 +50,3 @@ C:\git\big-room-repo\BigRoom.Website\bin\System.Web.WebPages.Razor.xml
 C:\git\big-room-repo\BigRoom.Website\obj\Debug\BigRoom.Website.dll
 C:\git\big-room-repo\BigRoom.Website\obj\Debug\BigRoom.Website.pdb
 C:\git\big-room-repo\BigRoom.Website\obj\Debug\BigRoom.Website.csprojResolveAssemblyReference.cache
-C:\git\big-room-repo\BigRoom.Website\bin\System.Net.Http.Formatting.dll
-C:\git\big-room-repo\BigRoom.Website\bin\System.Web.Http.dll
-C:\git\big-room-repo\BigRoom.Website\bin\System.Web.Http.WebHost.dll
-C:\git\big-room-repo\BigRoom.Website\bin\System.Net.Http.Formatting.xml
-C:\git\big-room-repo\BigRoom.Website\bin\System.Web.Http.xml
-C:\git\big-room-repo\BigRoom.Website\bin\System.Web.Http.WebHost.xml

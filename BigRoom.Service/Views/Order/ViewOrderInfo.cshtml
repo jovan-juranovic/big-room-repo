@@ -1,0 +1,84 @@
+﻿<script type="text/html" id="orderInfo">
+    <div class="modal fade" id="AddRowModal" tabindex="-1" role="dialog" aria-labelledby="AddRowModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4>Shipping and Payment Info</h4>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <legend>Shipping Info</legend>
+                        <div class="form-group">
+                            <label for="full-name">Full Name:</label>
+                            <p id="full-name" class="form-control-static" data-bind="text: fullName"></p>
+                        </div>
+                        <div class="form-group">
+                            <label for="address1">Address 1:</label>
+                            <p id="address1" class="form-control-static" data-bind="text: address1"></p>
+                        </div>
+                        <div class="form-group">
+                            <label for="address2">Address 2:</label>
+                            <p id="address2" class="form-control-static" data-bind="text: address2"></p>
+                        </div>
+                        <div class="form-group">
+                            <label for="city">City:</label>
+                            <p id="city" class="form-control-static" data-bind="text: city"></p>
+                        </div>
+                        <div class="form-group" data-bind="visible: region">
+                            <label for="region">Region:</label>
+                            <p id="region" class="form-control-static" data-bind="text: region"></p>
+                        </div>
+                        <div class="form-group">
+                            <label for="country">Country:</label>
+                            <p id="country" class="form-control-static" data-bind="text: country"></p>
+                        </div>
+                        <div class="form-group">
+                            <label for="zip-code">Zip Code:</label>
+                            <p id="zip-code" class="form-control-static" data-bind="text: zipCode"></p>
+                        </div>
+                    </form>
+                    <form>
+                        <legend>Payment Info</legend>
+                        <div class="form-group">
+                            <label for="card-number">Card Number:</label>
+                            <p id="card-number" class="form-control-static" data-bind="text: cardNumber"></p>
+                        </div>
+                        <div class="form-group">
+                            <label for="name-on-card">Name On Card:</label>
+                            <p id="name-on-card" class="form-control-static" data-bind="text: nameOnCard"></p>
+                        </div>
+                        <div class="form-group">
+                            <label for="exp">Expiration:</label>
+                            <p id="exp" class="form-control-static" data-bind="text: expiration"></p>
+                        </div>
+                    </form>
+                    <table class="table table-striped table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th>Quantity</th>
+                                <th>Product Name</th>
+                                <th>Price</th>
+                                <th>Shipping Price</th>
+                                <th>Total Price</th>
+                            </tr>
+                        </thead>
+                        <tbody data-bind="foreach: items">
+                            <tr>
+                                <td data-bind="text: Quantity"></td>
+                                <td data-bind="text: ProductName"></td>
+                                <td data-bind="text: Price"></td>
+                                <td data-bind="text: ShippingPrice"></td>
+                                <td data-bind="text: TotalPrice"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button data-dismiss="modal" class="btn btn-danger">Close <i class="glyphicon glyphicon-remove"></i></button>
+                    <button class="btn btn-success" data-bind>Save <i class="glyphicon glyphicon-ok"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>

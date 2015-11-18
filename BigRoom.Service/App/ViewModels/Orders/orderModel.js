@@ -1,4 +1,4 @@
-﻿window.vm.order = (function (ko, serverProxy, utility, toastr) {
+﻿window.vm.order = (function (ko, serverProxy, utility, orderInfoFactory, toastr) {
     return function () {
 
         var self, initData, OrderFactory, updateData;
@@ -9,12 +9,17 @@
         OrderFactory = function (serverItem) {
             var that = this;
             that.id = serverItem.Id;
-            that.title = serverItem.Title;
+            that.orderNumber = serverItem.OrderNumber;
+            that.orderDate = serverItem.OrderDate;
             that.comment = serverItem.Comment;
-            that.date = serverItem.PostingDate;
-            that.product = serverItem.ProductName;
-            that.user = serverItem.UserEmail;
-            that.rating = serverItem.Rating;
+            that.subtotal = serverItem.Subtotal;
+            that.shipping = serverItem.ShippingTotal;
+            that.total = serverItem.Total;
+            that.user = serverItem.Username;
+        };
+
+        OrderFactory.prototype.info = function() {
+            utility.activateModalFromTemplate(new orderInfoFactory(this.id), "orderInfo");
         };
 
         initData = function (serverData) {
@@ -24,6 +29,6 @@
         serverProxy.getOrders(initData);
 
     };
-})(ko, util.serverProxy, util.utility, toastr);
+})(ko, util.serverProxy, util.utility, vm.orderInfo, toastr);
 
 ko.applyBindings(window.vm.order);

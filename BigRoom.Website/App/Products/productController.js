@@ -3,35 +3,26 @@
         .module("BigRoomApp")
         .controller("ProductController", ProductController);
 
-    ProductController.$inject = ["$stateParams", "productsService", "store", "$rootScope", "toaster"];
+    ProductController.$inject = ["$stateParams", "productsService", "store", "$rootScope", "toastr"];
 
-    function ProductController($stateParams, productsService, store, $rootScope, toaster) {
+    function ProductController($stateParams, productsService, store, $rootScope, toastr) {
         var prodCtrl = this;
 
         prodCtrl.product = {};
 
         prodCtrl.addToCart = function(product) {
-            if (store.get("item_" + product.Id)) {
-                toaster.pop({
-                    type: "error",
-                    title: "Error",
-                    body: "Product is allready added to cart!",
-                    showCloseButton: true
-                });
+            if (localStorage.getItem("item_" + product.Id)) {
+                toastr.error("Product is allready added to cart!", "Error");
             } else {
-                store.set("item_" + product.Id, {
+                localStorage.setItem("item_" + product.Id, JSON.stringify({
                     Id: product.Id,
+                    Name: product.Name,
                     Price: product.Price,
                     ShippingPrice: product.ShippingPrice,
                     Quantity: 1
-                });
+                }));
                 $rootScope.$broadcast("addToCart", {});
-                toaster.pop({
-                    type: "success",
-                    title: "Success",
-                    body: "Product is successfuly added to cart!",
-                    showCloseButton: true
-                });
+                toastr.success("Product is successfuly added to cart!", "Success");
             };
         }
 

@@ -17,7 +17,7 @@ namespace BigRoom.BusinessLayer.Services
                     return uow.ProductRepository.GetAll(product => product.CategoryId == categoryId);
                 }
 
-                return uow.ProductRepository.GetAll(includeProperties: "Category");
+                return uow.ProductRepository.GetAll(includeProperties: "Category,ProductReviews");
             }
         }
 

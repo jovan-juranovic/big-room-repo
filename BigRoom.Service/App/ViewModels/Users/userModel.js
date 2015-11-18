@@ -16,6 +16,10 @@
         utility.activateModalFromTemplate(new userAddEditFactory(this.id), "addEditUser");
     };
 
+    self.add = function () {
+        utility.activateModalFromTemplate(new userAddEditFactory(), "addEditUser");
+    };
+
     UserFactory.prototype.remove = function () {
         var userId = this.id;
         utility.dialog("", "Are you sure you want to delete user?", function() {
@@ -30,12 +34,19 @@
         });
     });
 
+    mediator.subscribe("UserAddEditModel.addUser", function (user, model) {
+        serverProxy.addUser(user, function (serverData) {
+            model.closeModal();
+            updateData(serverData);
+        });
+    });
+
     updateData = function (serverData) {
         if (serverData.length > 0) {
             utility.reloadDataTable("users-table", self.users, serverData, UserFactory);
-            toastr.success("User successfully updated!");
+            toastr.success("Success!");
         } else {
-            toastr.error("Error updating user!");
+            toastr.error("Error!");
         }
     };
 

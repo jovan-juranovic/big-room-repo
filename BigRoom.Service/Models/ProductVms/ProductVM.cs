@@ -20,6 +20,7 @@ namespace BigRoom.Service.Models.ProductVms
         public string Status { get; set; }
         public int CategoryId { get; set; }
         public string Category { get; set; }
+        public int ReviewCount { get; set; }
 
         public List<ProductDetailVM> ProductDetails { get; set; }
         public List<ProductReviewVM> ProductReviews { get; set; }

@@ -5,6 +5,7 @@
     var productsUrl = "/api/v1/mvc/products/";
     var reviewsUrl = "/api/v1/mvc/reviews/";
     var ordersUrl = "/api/v1/mvc/orders/";
+    var countingUrl = "/api/v1/mvc/counting/";
 
     return {
 
@@ -13,6 +14,9 @@
         },
         getUser: function (id, callback) {
             $.getJSON(usersUrl + id, callback);
+        },
+        addUser: function(user ,callback) {
+            utility.postJson(usersUrl, user, callback);
         },
         editUser: function(user, callback) {
             utility.putJson(usersUrl, user, callback);
@@ -49,6 +53,12 @@
         },
         getOrders: function(callback) {
             $.getJSON(ordersUrl, callback);
+        },
+        getOrder: function(id, callback) {
+            $.getJSON(ordersUrl + id, callback);
+        },
+        getCount: function(callback) {
+            $.getJSON(countingUrl, callback);
         }
 };
 })(util.utility);
